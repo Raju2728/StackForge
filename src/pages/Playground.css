@@ -1,0 +1,43 @@
+/* Playground.css */
+.playground-page {
+  padding: 24px;
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+}
+
+.playground-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.playground-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.playground-editor-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+@media (max-width: 768px) {
+  .playground-page {
+    padding: 16px;
+    height: auto;
+    min-height: calc(100vh - var(--header-height));
+  }
+  .playground-editor-area {
+    grid-template-columns: 1fr;
+  }
+}

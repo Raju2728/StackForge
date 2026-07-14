@@ -1,0 +1,54 @@
+/* CompletionModal.css */
+.completion-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+  padding: 20px;
+}
+
+.completion-modal {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.3s ease;
+}
+
+.completion-modal-icon {
+  font-size: 5rem;
+  margin-bottom: 16px;
+  animation: pulse 1.5s ease infinite;
+}
+
+.completion-modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.completion-modal-desc {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.completion-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .completion-modal {
+    padding: 32px 24px;
+  }
+}

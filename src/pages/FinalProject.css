@@ -1,0 +1,93 @@
+/* FinalProject.css */
+.final-project-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.final-project-header {
+  margin-bottom: 32px;
+}
+
+.final-project-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.final-project-desc {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+.final-project-requirements {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.final-project-requirements h3 {
+  margin-bottom: 16px;
+}
+
+.requirements-checklist {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.requirements-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  padding: 6px 0;
+}
+
+.requirements-checklist li .check-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.requirements-checklist li .check-icon.checked {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.final-project-editor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.final-project-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .final-project-page {
+    padding: 20px 16px;
+  }
+  .requirements-checklist {
+    grid-template-columns: 1fr;
+  }
+  .final-project-editor {
+    grid-template-columns: 1fr;
+  }
+}

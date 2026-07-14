@@ -1,0 +1,106 @@
+/* PracticeTask.css */
+.practice-task {
+  animation: slideUp 0.3s ease;
+}
+
+.practice-task-header {
+  margin-bottom: 24px;
+}
+
+.practice-task-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.practice-task-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.practice-task-instructions {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.practice-task-instructions p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.practice-task-hints {
+  margin-top: 16px;
+}
+
+.practice-task-hints-toggle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+.practice-task-hints-toggle:hover {
+  text-decoration: underline;
+}
+
+.practice-task-hints-list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.practice-task-hints-list li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 4px 0;
+}
+
+.practice-task-editor-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.practice-task-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.practice-task-feedback {
+  margin-top: 16px;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideUp 0.2s ease;
+}
+
+.practice-task-feedback.correct {
+  background: var(--success-bg);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.practice-task-feedback.incorrect {
+  background: var(--error-bg);
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+
+@media (max-width: 768px) {
+  .practice-task-editor-area {
+    grid-template-columns: 1fr;
+  }
+}

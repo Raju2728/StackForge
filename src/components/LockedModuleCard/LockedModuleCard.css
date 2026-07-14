@@ -1,0 +1,41 @@
+/* LockedModuleCard.css */
+.locked-module-card {
+  background: var(--surface);
+  border: 2px dashed var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.locked-module-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.locked-module-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.locked-module-desc {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.locked-module-progress-info {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 300px;
+}

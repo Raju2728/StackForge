@@ -1,0 +1,150 @@
+/* TopicViewer.css */
+.topic-viewer {
+  flex: 1;
+  padding: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: slideUp 0.3s ease;
+}
+
+.topic-viewer-header {
+  margin-bottom: 32px;
+}
+
+.topic-num-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+.topic-viewer-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.topic-section {
+  margin-bottom: 28px;
+}
+
+.topic-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+}
+
+.topic-section-content {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.topic-analogy {
+  background: linear-gradient(135deg, var(--primary-bg), transparent);
+  border-left: 4px solid var(--primary);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.topic-syntax-block {
+  background: var(--editor-bg);
+  color: var(--editor-text);
+  padding: 20px;
+  border-radius: var(--radius);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.topic-notes-list,
+.topic-mistakes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.topic-notes-list li,
+.topic-mistakes-list li {
+  padding: 8px 0;
+  padding-left: 28px;
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.topic-notes-list li::before {
+  content: '💡';
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.topic-mistakes-list li::before {
+  content: '⚠️';
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.topic-practice-prompt {
+  background: var(--success-bg);
+  border: 1px solid var(--success);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  color: var(--text);
+}
+
+.topic-practice-prompt strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.topic-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--surface-border);
+}
+
+.topic-complete-section {
+  text-align: center;
+  padding: 20px;
+  margin-top: 32px;
+}
+
+@media (max-width: 768px) {
+  .topic-viewer {
+    padding: 20px 16px;
+  }
+  .topic-viewer-title {
+    font-size: 1.3rem;
+  }
+  .topic-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .topic-nav .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
