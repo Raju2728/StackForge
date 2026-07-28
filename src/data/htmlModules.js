@@ -1,18 +1,24 @@
 /**
  * htmlModules.js
  * Content for all 22 HTML learning modules.
- * Each module has: id, title, explanation, analogy, syntax, codeExample,
- * expectedOutput, notes, commonMistakes, practicePrompt.
+ * Each module has: id, title, explanation, analogy, thanglishAnalogy,
+ * analogyConnection, internalWorking, syntax, codeExample, expectedOutput,
+ * notes, commonMistakes, practicePrompt, interviewQuestions, miniTask.
  */
 
 const htmlModules = [
   {
     id: 1,
     title: 'Introduction to Web Development',
+    category: 'HTML Basics',
     explanation:
       'Web development is the process of building websites and web applications that people can access through a browser like Chrome, Firefox, or Edge. Every website you visit — Google, YouTube, Wikipedia — is built using web technologies. The three core technologies are HTML (structure), CSS (appearance), and JavaScript (behaviour). In this course, we start with HTML, the foundation of every webpage.',
     analogy:
       'Think of building a house. HTML is like the bricks, walls, and rooms — it creates the structure. CSS is the paint, curtains, and decorations — it makes things look good. JavaScript is the electricity, plumbing, and smart devices — it adds functionality and interactivity.',
+    thanglishAnalogy:
+      'Veedu kattum bodhu bricks and walls dhane HTML. Interior design & paint CSS. Electricity, plumbing, smart gadgets JavaScript. Bricks illama room kooda kattamudiyaadhu, adhumadhiri HTML illama website-e illai! Front-end oda basic foundation-e HTML dhaan.',
+    analogyConnection: 'HTML = House Skeleton/Bricks | CSS = Paint & Interior | JavaScript = Electricity & Plumbing',
+    internalWorking: 'When you open a .html file, the browser\'s HTML parser reads the text tags top-to-bottom and constructs a DOM (Document Object Model) tree in RAM.',
     syntax: null,
     codeExample:
 `<!-- This is a simple HTML page -->
@@ -39,14 +45,25 @@ const htmlModules = [
       'Not saving files with the .html extension.',
     ],
     practicePrompt: 'Create a simple HTML page with a heading that says "My First Webpage" and a paragraph below it.',
+    interviewQuestions: [
+      'What does HTML stand for?',
+      'What are the 3 main pillars of Web Development?',
+      'Is HTML a programming language or markup language?',
+    ],
+    miniTask: 'Create an HTML file with your name in an <h1> tag and a short bio in a <p> tag.',
   },
   {
     id: 2,
     title: 'How a Website Works',
+    category: 'HTML Basics',
     explanation:
       'When you type a website address (URL) in your browser and press Enter, several things happen behind the scenes. Your browser sends a request to a server (a powerful computer that stores website files). The server finds the requested files (HTML, CSS, JS, images) and sends them back. Your browser then reads these files and displays the webpage. This entire process happens in milliseconds!',
     analogy:
       'Imagine ordering food from a restaurant. You (the browser) place an order (type a URL). The waiter (the internet) carries your order to the kitchen (the server). The chef prepares the food (finds the files) and the waiter brings it back to you. Your browser then "serves" the webpage on your screen.',
+    thanglishAnalogy:
+      'Hotel-la food order panra madhiri! Browser (user) order podum (URL enter), Waiter (Internet) kitchen-kku pogum (Server), Chef samachu tharuvaaru (HTML/CSS files), Waiter thirumba kondu vandhu kudupparu (Display in browser). Microseconds-la indha process mudinjidum.',
+    analogyConnection: 'Customer = Browser | Order = HTTP Request | Kitchen = Server | Dish = HTML/CSS Files',
+    internalWorking: 'The browser resolves the domain name to an IP address using DNS, opens a TCP/IP socket connection (port 80 or 443), and issues an HTTP GET request.',
     syntax: null,
     codeExample:
 `<!-- The browser reads this file from the server -->
@@ -73,18 +90,28 @@ const htmlModules = [
       'Not understanding that the browser must download files before displaying them.',
     ],
     practicePrompt: 'Write an HTML page that explains in your own words how a website works, using headings and paragraphs.',
+    interviewQuestions: [
+      'What happens step-by-step when you type a URL in browser?',
+      'What is HTTP/HTTPS?',
+      'What is the difference between a Client and a Server?',
+    ],
+    miniTask: 'Write a short summary of how Client-Server architecture works inside a <p> tag.',
   },
   {
     id: 3,
     title: 'Browser and Server Workflow',
+    category: 'HTML Basics',
     explanation:
-      'The communication between a browser and server follows a specific workflow: (1) User enters a URL, (2) Browser sends an HTTP request to the server, (3) Server processes the request, (4) Server sends back HTML, CSS, JS files as an HTTP response, (5) Browser parses HTML to build the page structure (DOM), (6) Browser applies CSS styles, (7) Browser executes JavaScript, (8) User sees the complete webpage. Understanding this workflow helps you know where your HTML code fits in the bigger picture.',
+      'The communication between a browser and server follows a specific workflow: (1) User enters a URL, (2) Browser sends an HTTP request to the server, (3) Server processes the request, (4) Server sends back HTML, CSS, JS files as an HTTP response, (5) Browser parses HTML to build the page structure (DOM), (6) Browser applies CSS styles, (7) Browser executes JavaScript, (8) User sees the complete webpage.',
     analogy:
       'Think of mailing a letter. You write the address (URL), put it in the mailbox (send request), the postal service delivers it (internet), the recipient reads it and writes back (server processes), and the reply comes back to you (response). The browser is like a translator that converts the server\'s reply into something visual.',
+    thanglishAnalogy:
+      'Postal letter anuppura madhiri: neenga address ezhudhi letter poduveenga (Request), post office deliver pannum (Server process), thirumba reply letter varum (Response HTML code), browser adha padichu visual-ah screen-la kaatum.',
+    analogyConnection: 'Letter Address = URL | Post Office = Internet | Recipient = Server | Reply = HTML Response',
+    internalWorking: 'Rendering engine (e.g. Blink in Chrome) builds the DOM Tree and CSSOM Tree, combines them into a Render Tree, performs Layout, and Paints pixels.',
     syntax: null,
     codeExample:
-`<!-- Step 5: Browser parses this HTML -->
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -113,14 +140,25 @@ const htmlModules = [
       'Not knowing about browser Developer Tools for debugging.',
     ],
     practicePrompt: 'Create an HTML page with an ordered list describing the 4 main steps of how a browser loads a webpage.',
+    interviewQuestions: [
+      'What is DOM tree parsing?',
+      'What is rendering engine in browser?',
+      'What is status code 200 vs 404?',
+    ],
+    miniTask: 'List the 4 rendering stages (Parse -> Render Tree -> Layout -> Paint) using an <ol> tag.',
   },
   {
     id: 4,
     title: 'HTML Document Structure',
+    category: 'HTML Basics',
     explanation:
-      'Every HTML document follows a standard structure. It starts with <!DOCTYPE html> which tells the browser this is an HTML5 document. Then comes the <html> tag which wraps everything. Inside it, there are two main sections: <head> (contains metadata like title, character set, and links to stylesheets) and <body> (contains everything visible on the page). This structure is like a blueprint that every webpage must follow.',
+      'Every HTML document follows a standard structure. It starts with <!DOCTYPE html> which tells the browser this is an HTML5 document. Then comes the <html> tag which wraps everything. Inside it, there are two main sections: <head> (contains metadata like title, character set, and links to stylesheets) and <body> (contains everything visible on the page).',
     analogy:
       'Think of an HTML document as a book. The <!DOCTYPE> is the book\'s cover type (hardcover/paperback). The <html> tag is the book itself. The <head> is the title page and table of contents (information about the book). The <body> is all the chapters and content you actually read.',
+    thanglishAnalogy:
+      'Oru book-oda structure madhiri: <!DOCTYPE> book type solla, <html> full book, <head> index/title page (invisible metadata like author, title), <body> padikkira main content pages (visible components).',
+    analogyConnection: '<!DOCTYPE> = Cover Type | <html> = Complete Book | <head> = Book Details | <body> = Story Pages',
+    internalWorking: 'The browser parser looks for <!DOCTYPE html> to activate standards mode instead of quirks mode, then parses <head> resources before rendering <body>.',
     syntax:
 `<!DOCTYPE html>        → Declares HTML5 document type
 <html lang="en">       → Root element, sets language
@@ -158,14 +196,25 @@ const htmlModules = [
       'Mixing up <title> (tab title) with <h1> (page heading).',
     ],
     practicePrompt: 'Create a complete HTML document structure with a title "My Learning Page" and an h1 heading inside the body.',
+    interviewQuestions: [
+      'Why do we need <!DOCTYPE html>?',
+      'What goes in <head> vs <body>?',
+      'What is Quirks Mode?',
+    ],
+    miniTask: 'Set up a boiler-plate HTML document with meta viewport and custom title.',
   },
   {
     id: 5,
     title: 'HTML Tags and Elements',
+    category: 'HTML Basics',
     explanation:
-      'HTML uses "tags" to define elements on a page. A tag is written in angle brackets like <tagname>. Most tags come in pairs: an opening tag <p> and a closing tag </p>. The content between them is the "element." Some tags are self-closing, like <br> (line break) and <img> (image). Tags can also have "attributes" that provide extra information, like <a href="url"> where href is an attribute. Understanding tags is the key to writing HTML.',
+      'HTML uses "tags" to define elements on a page. A tag is written in angle brackets like <tagname>. Most tags come in pairs: an opening tag <p> and a closing tag </p>. The content between them is the "element." Some tags are self-closing, like <br> and <img>. Tags can also have "attributes" like <a href="url">.',
     analogy:
-      'Tags are like containers or boxes. The opening tag <p> opens a box, you put content inside (text, images), and the closing tag </p> closes the box. The box label tells the browser what kind of content is inside. Self-closing tags are like stickers — they don\'t need a separate closing because they contain no content.',
+      'Tags are like containers or boxes. The opening tag <p> opens a box, you put content inside, and the closing tag </p> closes the box. Self-closing tags are like stickers — they don\'t need a separate closing because they contain no content.',
+    thanglishAnalogy:
+      'Tag oru container box madhiri! Opening tag <p> box open pannum, content ulle poduveenga, closing tag </p> box moodum. Self closing tags <br> sticker madhiri — single stamp dhaan, close panna zaroorath illai.',
+    analogyConnection: '<p> = Box Open | </p> = Box Close | Content = Box Items | Self-closing = Sticker/Stamp',
+    internalWorking: 'Elements are converted to DOM nodes (Element Nodes, Text Nodes, Attribute Nodes) which form the DOM Tree hierarchy.',
     syntax:
 `<tagname>Content</tagname>     → Paired tag (opening + closing)
 <tagname attribute="value">    → Tag with attribute
@@ -196,19 +245,29 @@ const htmlModules = [
     ],
     commonMistakes: [
       'Forgetting the closing tag </p> — causes content to merge.',
-      'Misspelling tag names like <headin> instead of <heading>.',
-      'Using wrong attribute names.',
-      'Nesting tags incorrectly: <b><i>text</b></i> (wrong) vs <b><i>text</i></b> (correct).',
+      'Misspelling tag names like <headin> instead of <h1>.',
+      'Nesting tags incorrectly: <b><i>text</b></i> vs <b><i>text</i></b>.',
     ],
     practicePrompt: 'Create an HTML page that uses at least 5 different tags: h1, p, a, br, and img.',
+    interviewQuestions: [
+      'What is the difference between an HTML Tag and an HTML Element?',
+      'Name 3 self-closing (void) elements in HTML.',
+      'What are attributes in HTML?',
+    ],
+    miniTask: 'Write a paragraph element containing a link with an href attribute.',
   },
   {
     id: 6,
     title: 'Headings and Paragraphs',
+    category: 'Content Structure',
     explanation:
-      'Headings and paragraphs are the most basic building blocks of content on a webpage. HTML provides six levels of headings: <h1> (largest, most important) through <h6> (smallest, least important). The <p> tag creates paragraphs of text. Headings create a hierarchy — like a book has chapters (h1), sections (h2), and sub-sections (h3). Every page should have exactly one <h1>, which describes the main topic.',
+      'Headings and paragraphs are the most basic building blocks of content on a webpage. HTML provides six levels of headings: <h1> (largest, most important) through <h6> (smallest). The <p> tag creates paragraphs of text. Headings create a hierarchy — like a book has chapters (h1), sections (h2), and sub-sections (h3).',
     analogy:
       'Think of a newspaper. The biggest, boldest headline at the top is <h1>. Section headers are <h2>. Sub-headings within sections are <h3>, and so on. The regular body text between headings is <p> paragraphs.',
+    thanglishAnalogy:
+      'Newspaper headline madhiri! Front-page main title <h1> (perusa irukum), Sub-headings <h2> and <h3>, normal news content <p> paragraph. <h1> to <h6> heading sizes and hierarchy control pannum.',
+    analogyConnection: '<h1> = Main Headline | <h2> = Section Title | <h3> = Sub-title | <p> = News Article Text',
+    internalWorking: 'Headings are block-level elements by default, rendered with decreasing font-sizes and distinct top/bottom margins specified in user-agent stylesheets.',
     syntax:
 `<h1>Main Heading</h1>        → Largest, most important
 <h2>Sub Heading</h2>          → Section heading
@@ -231,12 +290,9 @@ const htmlModules = [
 
   <h3>What is a Tag?</h3>
   <p>A tag is a special keyword surrounded by angle brackets.</p>
-
-  <h2>Chapter 2: CSS Styling</h2>
-  <p>CSS makes your webpage look beautiful.</p>
 </body>
 </html>`,
-    expectedOutput: 'A structured page with a main heading, two chapter headings, a sub-heading, and paragraphs.',
+    expectedOutput: 'A structured page with a main heading, chapter heading, sub-heading, and paragraphs.',
     notes: [
       'Use only one <h1> per page for better SEO and accessibility.',
       'Don\'t skip heading levels — go from h1 to h2, not h1 to h3.',
@@ -247,17 +303,27 @@ const htmlModules = [
       'Using headings just for making text big — use CSS for that instead.',
       'Having multiple <h1> tags on one page.',
       'Skipping heading levels (h1 then h4).',
-      'Not using paragraphs for body text.',
     ],
     practicePrompt: 'Create a page with an h1, two h2 sections, each with an h3 sub-section and paragraphs.',
+    interviewQuestions: [
+      'Why is heading hierarchy important for SEO?',
+      'How many <h1> tags should be used per webpage?',
+      'What is the default display property of headings?',
+    ],
+    miniTask: 'Create an article structure with <h1>, <h2>, and 3 paragraphs.',
   },
   {
     id: 7,
     title: 'Text Formatting',
+    category: 'Content Structure',
     explanation:
-      'HTML provides several tags to format text and give it meaning. <b> or <strong> makes text bold (strong uses semantic meaning — "important"). <i> or <em> makes text italic (em means "emphasized"). Other useful tags include: <u> for underline, <s> for strikethrough, <mark> for highlighted text, <small> for smaller text, <sub> for subscript, <sup> for superscript, and <blockquote> for quotations. These tags help add emphasis and structure to your content.',
+      'HTML provides several tags to format text and give it meaning. <b> or <strong> makes text bold (strong uses semantic meaning — "important"). <i> or <em> makes text italic (em means "emphasized"). Other tags: <u> (underline), <s> (strikethrough), <mark> (highlight), <small> (small text), <sub> (subscript), <sup> (superscript), <blockquote> (quotes).',
     analogy:
       'Text formatting in HTML is like using a highlighter, bold pen, or underline in your notebook. Each tool serves a purpose — bold for important points, italics for emphasis, highlights for key concepts.',
+    thanglishAnalogy:
+      'Notebook-la highlighter, bold pen, underline use panra madhiri dhaan! Important word-kku <strong> (bold), emphasis-kku <em> (italics), highlight panna <mark> (yellow shade), formula H2O-kku <sub>, math E=mc2-kku <sup>.',
+    analogyConnection: '<strong> = Dark Marker | <em> = Slanted Pen | <mark> = Highlighter | <sub>/<sup> = Math Formula Index',
+    internalWorking: 'Inline formatting tags do not break the line flow; they alter inline layout formatting and voice synthesis cues in screen readers.',
     syntax:
 `<strong>Bold (important)</strong>
 <em>Italic (emphasis)</em>
@@ -281,12 +347,10 @@ const htmlModules = [
   <p>Water formula: H<sub>2</sub>O</p>
   <p>Einstein's equation: E = mc<sup>2</sup></p>
   <p><mark>This text is highlighted</mark></p>
-  <p><s>This text is crossed out</s></p>
   <blockquote>"The only way to learn programming is by programming." — Dennis Ritchie</blockquote>
-  <p><small>This is small print text.</small></p>
 </body>
 </html>`,
-    expectedOutput: 'A page demonstrating bold, italic, subscript, superscript, highlighted, strikethrough, quote, and small text.',
+    expectedOutput: 'A page demonstrating bold, italic, subscript, superscript, highlighted text, and a blockquote.',
     notes: [
       'Prefer <strong> over <b> and <em> over <i> for better accessibility.',
       '<mark> adds a yellow highlight background by default.',
@@ -297,23 +361,32 @@ const htmlModules = [
       'Using <b> when <strong> is more appropriate semantically.',
       'Overusing text formatting — it reduces readability.',
       'Using <u> for non-link text (users might confuse it with a link).',
-      'Forgetting closing tags for formatting elements.',
     ],
     practicePrompt: 'Create a page that demonstrates at least 6 different text formatting tags with example text.',
+    interviewQuestions: [
+      'What is the difference between <b> and <strong>?',
+      'What is the difference between <i> and <em>?',
+      'How do you write subscript and superscript in HTML?',
+    ],
+    miniTask: 'Write a chemistry formula (H2O) and a math power (X2) using <sub> and <sup>.',
   },
   {
     id: 8,
     title: 'Links',
+    category: 'Navigation',
     explanation:
-      'Links (hyperlinks) connect one page to another. They are created using the <a> (anchor) tag with the href attribute specifying the destination URL. Links can point to other websites (external), other pages on your site (internal), sections on the same page (anchors with #id), email addresses (mailto:), or phone numbers (tel:). The target="_blank" attribute opens links in a new tab.',
+      'Links (hyperlinks) connect one page to another. They are created using the <a> (anchor) tag with the href attribute specifying the destination URL. Links can point to external websites, internal pages, sections on the same page (#id), email addresses (mailto:), or phone numbers (tel:).',
     analogy:
-      'Links are like doors in a building. Each door (link) takes you to a different room (page). Some doors lead to rooms in the same building (internal links), while others lead outside to different buildings (external links). An anchor link is like an elevator that takes you to a specific floor within the same building.',
+      'Links are like doors in a building. Each door (link) takes you to a different room (page). Some doors lead to rooms in the same building (internal links), while others lead outside to different buildings (external links).',
+    thanglishAnalogy:
+      'Building-la kathavu (door) madhiri: oru kathavu thanduna vera room-kku povom. Internal link = namma veettukulle adjacent room-kku poga, External link = pakkathu kattidathuku poga target="_blank" dharaama pudhu tab-la thirakkum.',
+    analogyConnection: '<a> = Door Frame | href = Destination Room | target="_blank" = Open New Portal',
+    internalWorking: 'Clicking an <a> tag instructs the browser location object to trigger a window navigation event to the destination URI.',
     syntax:
 `<a href="url">Link Text</a>                    → Basic link
 <a href="url" target="_blank">New Tab</a>       → Opens in new tab
 <a href="#section-id">Jump to Section</a>        → Anchor link
-<a href="mailto:email@example.com">Email</a>    → Email link
-<a href="page.html">Internal Page</a>           → Internal link`,
+<a href="mailto:email@example.com">Email</a>    → Email link`,
     codeExample:
 `<!DOCTYPE html>
 <html lang="en">
@@ -323,23 +396,13 @@ const htmlModules = [
 </head>
 <body>
   <h1>Understanding Links</h1>
-  
   <h2>External Links</h2>
   <p><a href="https://www.google.com" target="_blank">Visit Google</a></p>
-  
-  <h2>Anchor Links</h2>
-  <p><a href="#contact">Jump to Contact Section</a></p>
-  
   <h2>Email Link</h2>
   <p><a href="mailto:student@example.com">Send Email</a></p>
-  
-  <br><br><br><br><br><br><br><br><br><br>
-  
-  <h2 id="contact">Contact Section</h2>
-  <p>You jumped here using an anchor link!</p>
 </body>
 </html>`,
-    expectedOutput: 'A page with clickable external, anchor, and email links.',
+    expectedOutput: 'A page with clickable external and email links.',
     notes: [
       'Always use descriptive link text — avoid "click here."',
       'Use target="_blank" with rel="noopener noreferrer" for security.',
@@ -350,22 +413,31 @@ const htmlModules = [
       'Forgetting the href attribute — the link won\'t work.',
       'Using # alone as href — it scrolls to the top of the page.',
       'Not matching the anchor id correctly (case-sensitive).',
-      'Using non-descriptive text like "click here" for links.',
     ],
     practicePrompt: 'Create a page with 3 links: one external link, one anchor link, and one email link.',
+    interviewQuestions: [
+      'What does target="_blank" do?',
+      'Why should you use rel="noopener noreferrer" with target="_blank"?',
+      'How do you create an email or phone call link in HTML?',
+    ],
+    miniTask: 'Create an <a> tag linking to Wikipedia in a new tab.',
   },
   {
     id: 9,
     title: 'Images',
+    category: 'Media',
     explanation:
-      'Images make webpages visual and engaging. The <img> tag is self-closing and requires two important attributes: src (the image source/path) and alt (alternative text for accessibility). The src can be a URL or a local file path. The alt text is read by screen readers and shown if the image fails to load. You can also set width and height attributes to control image size.',
+      'Images make webpages visual and engaging. The <img> tag is self-closing and requires two important attributes: src (the image source/path) and alt (alternative text for accessibility). The alt text is read by screen readers and shown if the image fails to load.',
     analogy:
-      'The <img> tag is like putting a photo in a picture frame on your wall. The src tells the browser where to find the photo (like the address of the photo shop). The alt text is like a caption underneath describing the photo for someone who can\'t see it.',
+      'The <img> tag is like putting a photo in a picture frame on your wall. The src tells the browser where to find the photo (photo shop address). The alt text is like a caption underneath describing the photo for someone who can\'t see it.',
+    thanglishAnalogy:
+      'Frame-la photo maattura madhiri! src = photo enga irukku (image path/URL), alt = image load aagalana text ah kaattum (blind people-kku screen reader padichu sollum).',
+    analogyConnection: '<img> = Photo Frame | src = Photo Path | alt = Caption for Visually Impaired',
+    internalWorking: 'The browser issues a separate asynchronous HTTP GET request for the image asset URL and decodes the image stream into bitmap pixels.',
     syntax:
 `<img src="image-url" alt="Description">              → Basic image
 <img src="photo.jpg" alt="Description"
-     width="300" height="200">                        → With dimensions
-<img src="images/logo.png" alt="Logo">                → Local file path`,
+     width="300" height="200">                        → With dimensions`,
     codeExample:
 `<!DOCTYPE html>
 <html lang="en">
@@ -375,20 +447,12 @@ const htmlModules = [
 </head>
 <body>
   <h1>Working with Images</h1>
-  
-  <h2>Image from URL</h2>
   <img src="https://via.placeholder.com/400x200" 
        alt="A placeholder image"
        width="400" height="200">
-  
-  <h2>Small Image</h2>
-  <img src="https://via.placeholder.com/150" 
-       alt="A small square placeholder">
-  
-  <p>Images make webpages more interesting!</p>
 </body>
 </html>`,
-    expectedOutput: 'A page with two placeholder images of different sizes and descriptive headings.',
+    expectedOutput: 'A page displaying a placeholder image with specified dimensions.',
     notes: [
       'Always include the alt attribute — it\'s essential for accessibility.',
       'Common image formats: JPG, PNG, GIF, SVG, WebP.',
@@ -399,30 +463,31 @@ const htmlModules = [
       'Forgetting the alt attribute — bad for accessibility and SEO.',
       'Wrong file path in src — image won\'t display.',
       'Not specifying width/height — can cause layout shifts.',
-      'Using very large image files — slows page loading.',
     ],
     practicePrompt: 'Create an HTML page that displays 2 images with proper alt text and different sizes.',
+    interviewQuestions: [
+      'Why is the alt attribute mandatory for accessibility?',
+      'What are the advantages of WebP image format over JPG/PNG?',
+      'What happens when image src path is wrong?',
+    ],
+    miniTask: 'Add an <img> tag with a placeholder URL and descriptive alt text.',
   },
   {
     id: 10,
     title: 'Lists',
+    category: 'Content Structure',
     explanation:
-      'HTML provides three types of lists: Ordered lists <ol> (numbered), Unordered lists <ul> (bulleted), and Description lists <dl> (term-definition pairs). Each list item is wrapped in <li> (list item). Lists can be nested — you can put a list inside another list. Lists are perfect for navigation menus, step-by-step instructions, feature lists, and more.',
+      'HTML provides three types of lists: Ordered lists <ol> (numbered), Unordered lists <ul> (bulleted), and Description lists <dl> (term-definition pairs). Each list item is wrapped in <li> (list item). Lists can be nested.',
     analogy:
-      'Think of making a shopping list (unordered — no specific order needed) vs. writing step-by-step cooking instructions (ordered — sequence matters). Description lists are like a glossary in a textbook — each term has its definition.',
+      'Think of making a shopping list (unordered — no specific order needed) vs. writing step-by-step cooking instructions (ordered — sequence matters). Description lists are like a glossary in a textbook.',
+    thanglishAnalogy:
+      'Shopping list (<ul> - Bullet points, order mukkiyam illai) vs Tea podura step-by-step recipe (<ol> - 1,2,3 order mukkiyam!). Glossary dictionary dhane <dl> (<dt> term, <dd> explanation).',
+    analogyConnection: '<ul> = Bulleted Grocery List | <ol> = Step 1,2,3 Recipe | <dl> = Dictionary Term/Definition',
+    internalWorking: 'List tags inject counter increments (for ol) or list-style glyphs (for ul) into pseudo-element boxes (::marker) rendered before each <li>.',
     syntax:
-`<ul>                    → Unordered (bulleted) list
-  <li>Item</li>
-</ul>
-
-<ol>                    → Ordered (numbered) list
-  <li>Step 1</li>
-</ol>
-
-<dl>                    → Description list
-  <dt>Term</dt>
-  <dd>Definition</dd>
-</dl>`,
+`<ul><li>Bulleted Item</li></ul>
+<ol><li>Numbered Step</li></ol>
+<dl><dt>Term</dt><dd>Definition</dd></dl>`,
     codeExample:
 `<!DOCTYPE html>
 <html lang="en">
@@ -431,32 +496,19 @@ const htmlModules = [
   <title>HTML Lists</title>
 </head>
 <body>
-  <h1>Types of Lists</h1>
-  
   <h2>Shopping List (Unordered)</h2>
   <ul>
     <li>Milk</li>
     <li>Bread</li>
-    <li>Eggs</li>
   </ul>
-  
   <h2>Recipe Steps (Ordered)</h2>
   <ol>
     <li>Preheat the oven</li>
-    <li>Mix the ingredients</li>
     <li>Bake for 30 minutes</li>
   </ol>
-  
-  <h2>Web Technologies (Description)</h2>
-  <dl>
-    <dt>HTML</dt>
-    <dd>Creates the structure of a webpage</dd>
-    <dt>CSS</dt>
-    <dd>Styles the appearance of a webpage</dd>
-  </dl>
 </body>
 </html>`,
-    expectedOutput: 'A page with three types of lists: bulleted, numbered, and description list.',
+    expectedOutput: 'A page with an unordered bullet list and an ordered numbered list.',
     notes: [
       'Lists can be nested to create sub-items.',
       '<ul> uses bullets; <ol> uses numbers by default.',
@@ -467,31 +519,34 @@ const htmlModules = [
       'Putting content directly in <ul> or <ol> without <li> tags.',
       'Forgetting to close <li> tags.',
       'Not nesting lists properly.',
-      'Using <br> tags instead of list items for lists.',
     ],
     practicePrompt: 'Create a page with an unordered list of 5 fruits and an ordered list of 5 steps to make tea.',
+    interviewQuestions: [
+      'What is the difference between <ul> and <ol>?',
+      'What is a description list <dl>?',
+      'Can you nest a <ul> inside an <ol>?',
+    ],
+    miniTask: 'Create an ordered list <ol> with 3 daily routine tasks.',
   },
   {
     id: 11,
     title: 'Tables',
+    category: 'Data Presentation',
     explanation:
-      'Tables display data in rows and columns. The <table> tag creates a table. Inside it, <tr> creates a row, <th> creates a header cell (bold and centered), and <td> creates a regular data cell. You can add <thead>, <tbody>, and <tfoot> to organize table sections. The <caption> tag adds a title above the table. Tables should be used for tabular data — not for page layout.',
+      'Tables display data in rows and columns. The <table> tag creates a table. Inside it, <tr> creates a row, <th> creates a header cell (bold and centered), and <td> creates a regular data cell. You can add <thead>, <tbody>, and <tfoot> to organize table sections.',
     analogy:
       'An HTML table is like a spreadsheet (Excel/Google Sheets). Each row (<tr>) is a row in the sheet. Each cell (<td>) is a cell in the sheet. Header cells (<th>) are like column headers at the top of the spreadsheet.',
+    thanglishAnalogy:
+      'Excel sheet dhaan HTML Table! <table> Excel file, <tr> each Row, <th> Header column title (bold-ah irukum), <td> Data box cell. Progress card, Timetable ellam table la dhaan poduvom.',
+    analogyConnection: '<table> = Excel Sheet | <tr> = Horizontal Row | <th> = Bold Header | <td> = Grid Cell',
+    internalWorking: 'Browser engine computes table layout geometry by analyzing cell widths, borders, spans (colspan/rowspan) across all rows.',
     syntax:
 `<table>
-  <caption>Table Title</caption>
   <thead>
-    <tr>
-      <th>Header 1</th>
-      <th>Header 2</th>
-    </tr>
+    <tr><th>Header</th></tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Data 1</td>
-      <td>Data 2</td>
-    </tr>
+    <tr><td>Data</td></tr>
   </tbody>
 </table>`,
     codeExample:
@@ -503,65 +558,57 @@ const htmlModules = [
 </head>
 <body>
   <h1>Student Grades</h1>
-  <table border="1" cellpadding="10" cellspacing="0">
-    <caption>Semester Results</caption>
+  <table border="1" cellpadding="8">
     <thead>
       <tr>
         <th>Name</th>
-        <th>Subject</th>
         <th>Grade</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Alice</td>
-        <td>Mathematics</td>
         <td>A</td>
-      </tr>
-      <tr>
-        <td>Bob</td>
-        <td>Science</td>
-        <td>B+</td>
-      </tr>
-      <tr>
-        <td>Charlie</td>
-        <td>English</td>
-        <td>A-</td>
       </tr>
     </tbody>
   </table>
 </body>
 </html>`,
-    expectedOutput: 'A table with a caption "Semester Results" showing 3 students with their subjects and grades.',
+    expectedOutput: 'A structured table with a header row (Name, Grade) and student data.',
     notes: [
       'Use tables only for tabular data — not for page layouts.',
       '<th> is automatically bold and centered by browsers.',
       'Use colspan and rowspan to merge cells.',
-      'The border attribute is used here for simplicity; use CSS in real projects.',
     ],
     commonMistakes: [
       'Using tables for page layout instead of CSS Grid or Flexbox.',
       'Forgetting <tr> and putting <td> directly inside <table>.',
-      'Not using <th> for header cells.',
       'Inconsistent number of cells across rows.',
     ],
     practicePrompt: 'Create a table showing a class timetable with 5 days and 4 time slots.',
+    interviewQuestions: [
+      'What are <thead>, <tbody>, and <tfoot> used for?',
+      'How do you merge cells in HTML tables (colspan/rowspan)?',
+      'Why should you not use tables for page layout?',
+    ],
+    miniTask: 'Build a simple 2x2 table with <th> headers and <td> data.',
   },
   {
     id: 12,
     title: 'Forms',
+    category: 'User Input',
     explanation:
-      'Forms allow users to input and submit data to a website. The <form> tag wraps form elements. Common form elements include: <input> (text, email, password, number, checkbox, radio), <textarea> (multi-line text), <select> (dropdown), <button> (submit/reset), and <label> (describes an input). The type attribute on <input> changes its behaviour. Forms are essential for login pages, registration, contact forms, and search bars.',
+      'Forms allow users to input and submit data to a website. The <form> tag wraps form elements. Common form elements include: <input> (text, email, password, number, checkbox, radio), <textarea> (multi-line text), <select> (dropdown), <button> (submit/reset), and <label> (describes an input).',
     analogy:
       'A form is like a paper application form you fill out. Each field (name, email, password) is an <input>. The "Submit" button at the bottom sends the form. Labels next to each field tell you what to write.',
+    thanglishAnalogy:
+      'College application form madhiri! <form> paper sheet, <label> field name ("Name:"), <input> blank fill-in box, <button> submission signature. Login, Signup, Feedback form ellam idhula dhaan senjuvanga.',
+    analogyConnection: '<form> = Application Form Sheet | <label> = Question Label | <input> = Fill-in Box | <button> = Submit Action',
+    internalWorking: 'Form elements form a FormData object upon submission which is encoded (URL-encoded or multipart) and sent via HTTP request body/query.',
     syntax:
 `<form action="/submit" method="POST">
   <label for="name">Name:</label>
   <input type="text" id="name" name="name">
-  
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email">
-  
   <button type="submit">Submit</button>
 </form>`,
     codeExample:
@@ -582,69 +629,46 @@ const htmlModules = [
       <label for="email">Email:</label><br>
       <input type="email" id="email" name="email" placeholder="Enter your email" required>
     </p>
-    <p>
-      <label for="password">Password:</label><br>
-      <input type="password" id="password" name="password" placeholder="Create a password" required>
-    </p>
-    <p>
-      <label>Gender:</label><br>
-      <input type="radio" name="gender" value="male" id="male">
-      <label for="male">Male</label>
-      <input type="radio" name="gender" value="female" id="female">
-      <label for="female">Female</label>
-    </p>
-    <p>
-      <label for="course">Course:</label><br>
-      <select id="course" name="course">
-        <option value="">Select Course</option>
-        <option value="bca">BCA</option>
-        <option value="bsc">B.Sc IT</option>
-        <option value="mca">MCA</option>
-      </select>
-    </p>
-    <p>
-      <input type="checkbox" id="agree" name="agree">
-      <label for="agree">I agree to the terms</label>
-    </p>
-    <p>
-      <button type="submit">Register</button>
-      <button type="reset">Reset</button>
-    </p>
+    <button type="submit">Register</button>
   </form>
 </body>
 </html>`,
-    expectedOutput: 'A registration form with fields for name, email, password, gender, course dropdown, checkbox, and buttons.',
+    expectedOutput: 'A functional registration form with name and email inputs.',
     notes: [
       'Always use <label> with the for attribute matching the input\'s id.',
       'The required attribute makes a field mandatory.',
       'type="email" provides built-in email validation.',
-      'Radio buttons with the same name are grouped together.',
     ],
     commonMistakes: [
       'Not linking <label> to <input> with for/id.',
       'Forgetting the name attribute — form data won\'t be sent.',
       'Using the same name for different radio button groups.',
-      'Not using placeholder text to guide users.',
     ],
     practicePrompt: 'Create a contact form with fields for name, email, message (textarea), and a submit button.',
+    interviewQuestions: [
+      'What is the difference between GET and POST methods in forms?',
+      'Why is the <label> tag important for web accessibility?',
+      'What does the required attribute do?',
+    ],
+    miniTask: 'Create an input with type="password" and a submit button inside a <form>.',
   },
   {
     id: 13,
     title: 'Semantic HTML',
+    category: 'Semantic Architecture',
     explanation:
-      'Semantic HTML uses tags that clearly describe the meaning of the content, not just how it looks. Tags like <header>, <nav>, <main>, <section>, <article>, <aside>, and <footer> tell the browser (and search engines) what each part of the page represents. This improves accessibility (screen readers understand the structure), SEO (search engines rank content better), and code readability. Compare this to using only <div> tags — which tell nothing about the content\'s purpose.',
+      'Semantic HTML uses tags that clearly describe the meaning of the content, not just how it looks. Tags like <header>, <nav>, <main>, <section>, <article>, <aside>, and <footer> tell the browser (and search engines) what each part of the page represents.',
     analogy:
-      'Imagine labelling boxes when moving. A box labelled "Kitchen Items" (semantic) is much more helpful than one labelled "Box #7" (non-semantic). Semantic HTML labels your content so everyone — browsers, search engines, and assistive technologies — understands what\'s inside.',
+      'Imagine labelling boxes when moving. A box labelled "Kitchen Items" (semantic) is much more helpful than one labelled "Box #7" (non-semantic). Semantic HTML labels your content so everyone understands what\'s inside.',
+    thanglishAnalogy:
+      'Shift aagum bodhu boxes label panra madhiri! "Kitchen items" nu dharalaama label panna (Semantic HTML: <header>, <main>, <footer>), easy-ah puriyum. "Box #7" nu sonna (Non-semantic <div><div><div>) edhuvu puriyadhu.',
+    analogyConnection: '<header> = Top Box Label | <main> = Core Content Label | <footer> = Bottom Label | <div> = Unlabelled Generic Box',
+    internalWorking: 'Accessibility APIs map HTML5 semantic tags directly to ARIA landmarks, allowing screen readers to jump directly to specific structural regions.',
     syntax:
-`<header>   → Page or section header
-<nav>      → Navigation links
-<main>     → Main content of the page (only one per page)
-<section>  → Thematic grouping of content
-<article>  → Self-contained content (blog post, news article)
-<aside>    → Side content (sidebar, related links)
-<footer>   → Page or section footer
-<figure>   → Image with caption
-<figcaption> → Caption for figure`,
+`<header>Header Content</header>
+<nav>Navigation Links</nav>
+<main><section>Main Content</section></main>
+<footer>Footer Content</footer>`,
     codeExample:
 `<!DOCTYPE html>
 <html lang="en">
@@ -654,61 +678,53 @@ const htmlModules = [
 </head>
 <body>
   <header>
-    <h1>My Blog</h1>
-    <nav>
-      <a href="#home">Home</a> |
-      <a href="#about">About</a> |
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>My Website</h1>
+    <nav><a href="#home">Home</a></nav>
   </header>
-
   <main>
     <article>
-      <h2>Understanding Semantic HTML</h2>
-      <p>Semantic tags describe the purpose of content.</p>
+      <h2>Article Title</h2>
+      <p>Content goes here...</p>
     </article>
-
-    <aside>
-      <h3>Related Topics</h3>
-      <ul>
-        <li>HTML5 Features</li>
-        <li>Accessibility</li>
-      </ul>
-    </aside>
   </main>
-
-  <footer>
-    <p>&copy; 2026 My Blog. All rights reserved.</p>
-  </footer>
+  <footer><p>&copy; 2026</p></footer>
 </body>
 </html>`,
-    expectedOutput: 'A structured blog page with a header, navigation, main article, sidebar, and footer.',
+    expectedOutput: 'A clean webpage structured with semantic header, main, article, and footer sections.',
     notes: [
       'Semantic HTML is an HTML5 feature — all modern browsers support it.',
       'Use <main> only once per page.',
       'Semantic tags improve SEO ranking significantly.',
-      'Screen readers use semantic tags to navigate the page.',
     ],
     commonMistakes: [
       'Using <div> for everything instead of semantic tags.',
-      'Using <section> without a heading inside it.',
       'Having multiple <main> elements on one page.',
-      'Confusing <section> with <div> — section groups related content.',
+      'Confusing <section> with <div>.',
     ],
     practicePrompt: 'Rewrite a page using semantic HTML tags: header, nav, main, section, article, aside, and footer.',
+    interviewQuestions: [
+      'What is Semantic HTML and why is it important for SEO and Accessibility?',
+      'What is the difference between <section> and <article>?',
+      'What is the difference between <div> and <section>?',
+    ],
+    miniTask: 'Wrap a blog post in an <article> tag with a <header> and <p> content.',
   },
   {
     id: 14,
     title: 'Header Section',
+    category: 'Semantic Architecture',
     explanation:
-      'The <header> element represents the introductory content at the top of a webpage or a section. It typically contains the website logo, site title, and sometimes a navigation bar or a tagline. The header is the first thing users see, so it should clearly identify the website. A page can have multiple <header> elements — one for the page and one for each section — but the main page header appears at the top.',
+      'The <header> element represents the introductory content at the top of a webpage or a section. It typically contains the website logo, site title, and sometimes a navigation bar or a tagline.',
     analogy:
-      'The header is like the front entrance of a building. It has the building name (logo), a welcome sign (title), and a directory board (navigation). It tells visitors where they are and where they can go.',
+      'The header is like the front entrance of a building. It has the building name (logo), a welcome sign (title), and a directory board (navigation). It tells visitors where they are.',
+    thanglishAnalogy:
+      'Office front entrance reception desk dhane <header>! Company logo, Welcome board, Title ellaam anga irukkum. Page kku top-la yaaru vandhalum dharalaama intro kudukkum.',
+    analogyConnection: '<header> = Reception Gate | Logo = Nameplate | Title = Welcome Sign',
+    internalWorking: 'The browser marks <header> as landmark banner in accessibility tree unless nested inside an article or section.',
     syntax:
 `<header>
-  <img src="logo.png" alt="Logo">  → Website logo
-  <h1>Website Name</h1>             → Site title
-  <p>Tagline or description</p>     → Optional tagline
+  <img src="logo.png" alt="Logo">
+  <h1>Website Name</h1>
 </header>`,
     codeExample:
 `<!DOCTYPE html>
@@ -722,42 +738,43 @@ const htmlModules = [
     <h1>🎓 StackLearner</h1>
     <p>Learn Web Development Step by Step</p>
   </header>
-
-  <main>
-    <p>The header above identifies the website. It contains the logo and tagline.</p>
-    <p>Headers set the tone and identity of your website.</p>
-  </main>
 </body>
 </html>`,
-    expectedOutput: 'A page with a header containing a title and tagline, followed by main content.',
+    expectedOutput: 'A clear website header with brand title and tagline.',
     notes: [
       '<header> is semantic — it tells browsers this is introductory content.',
-      'Keep the header clean and simple — don\'t overload it.',
+      'Keep the header clean and simple.',
       'The header usually stays consistent across all pages.',
-      'Mobile headers should be compact and responsive.',
     ],
     commonMistakes: [
-      'Confusing <header> with <head> — they are completely different.',
-      'Putting too much content in the header.',
-      'Not making the header responsive for mobile screens.',
-      'Forgetting the alt attribute on the logo image.',
+      'Confusing <header> with <head> — <head> is invisible metadata, <header> is visual layout.',
+      'Putting main page content inside <header>.',
     ],
-    practicePrompt: 'Create a header section with a website name, a tagline, and a simple logo (use an emoji or text).',
+    practicePrompt: 'Create a header section with a website name, a tagline, and a simple logo.',
+    interviewQuestions: [
+      'What is the difference between <head> and <header>?',
+      'Can you have multiple <header> elements on a single page?',
+      'What elements belong inside a <header>?',
+    ],
+    miniTask: 'Build a <header> section containing an <h1> logo and a subtitle.',
   },
   {
     id: 15,
     title: 'Navigation Section',
+    category: 'Semantic Architecture',
     explanation:
-      'The <nav> element contains the main navigation links for a website. It helps users move between pages or sections. Navigation typically includes links to Home, About, Services, Contact, etc. The nav element can be placed inside the header or as a standalone element. Good navigation is crucial for user experience — users should always know where they are and where they can go.',
+      'The <nav> element contains the main navigation links for a website. It helps users move between pages or sections. Navigation typically includes links to Home, About, Services, Contact, etc.',
     analogy:
       'Navigation is like a table of contents in a book or a directory in a shopping mall. It lists all the places you can go and lets you jump directly to any destination.',
+    thanglishAnalogy:
+      'Mall-la irukkira Direction Board dhane <nav>! Home, About, Contact nu enge poga venumo antha room-kku vazhi kaattum.',
+    analogyConnection: '<nav> = Direction Board | Links = Floor Arrows | Target = Destination Room',
+    internalWorking: 'Assigned navigation role in ARIA landmark hierarchy, accessible via screen reader landmark shortcuts (N key).',
     syntax:
 `<nav>
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>`,
     codeExample:
@@ -773,58 +790,46 @@ const htmlModules = [
     <nav>
       <a href="#home">Home</a> |
       <a href="#about">About</a> |
-      <a href="#services">Services</a> |
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
-  <main>
-    <section id="home">
-      <h2>Home</h2>
-      <p>Welcome to our website.</p>
-    </section>
-    <section id="about">
-      <h2>About</h2>
-      <p>We are a learning platform.</p>
-    </section>
-    <section id="services">
-      <h2>Services</h2>
-      <p>We offer web development courses.</p>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email us at hello@example.com</p>
-    </section>
-  </main>
 </body>
 </html>`,
-    expectedOutput: 'A page with a navigation bar containing 4 links that jump to different sections.',
+    expectedOutput: 'A header with a responsive navigation bar.',
     notes: [
       'Use <nav> only for main navigation — not for every group of links.',
       'Navigation links should use <a> tags with descriptive text.',
       'Using <ul> with <li> inside <nav> is a best practice.',
-      'Active page link should be visually highlighted (done with CSS).',
     ],
     commonMistakes: [
       'Not using the <nav> element for navigation links.',
       'Creating navigation with <div> instead of <nav>.',
-      'Having broken or empty href attributes.',
-      'Not making navigation accessible to keyboard users.',
     ],
     practicePrompt: 'Create a navigation section with a list of 5 links: Home, About, Courses, Blog, Contact.',
+    interviewQuestions: [
+      'Why is <nav> preferred over a <div> for navigation links?',
+      'Should all links on a webpage be placed inside <nav>?',
+      'How to structure a accessible navbar?',
+    ],
+    miniTask: 'Create a <nav> element with 3 list items linking to section anchors.',
   },
   {
     id: 16,
     title: 'Hero Section',
+    category: 'Page Components',
     explanation:
-      'The hero section is the large, prominent area at the top of a webpage (below the header/nav). It\'s the first content users see and should immediately communicate what the website is about. A hero section typically contains a large heading, a short description, and a call-to-action button. It\'s designed to grab attention and encourage users to explore further. In HTML, it\'s usually built with a <section> or <div> element.',
+      'The hero section is the large, prominent area at the top of a webpage (below the header/nav). It\'s the first content users see and should immediately communicate what the website is about.',
     analogy:
-      'The hero section is like a movie poster or a billboard. It\'s big, bold, and instantly tells you what the movie (website) is about. The call-to-action button is like the "Book Tickets" button — it encourages you to take the next step.',
+      'The hero section is like a movie poster or a billboard. It\'s big, bold, and instantly tells you what the movie (website) is about.',
+    thanglishAnalogy:
+      'Cinema poster/billboard dhane Hero Section! Periya bold title, attractive punch line, thirumba "Book Tickets" call-to-action button.',
+    analogyConnection: 'Hero Banner = Movie Poster | Heading = Movie Title | Button = Book Tickets Action',
+    internalWorking: 'Rendered as the primary visual focus box in top-level layout viewport.',
     syntax:
 `<section class="hero">
   <h1>Main Headline</h1>
-  <p>Supporting description text</p>
-  <a href="#start">Get Started</a>    → Call-to-action
+  <p>Supporting text</p>
+  <a href="#cta">Call To Action</a>
 </section>`,
     codeExample:
 `<!DOCTYPE html>
@@ -834,55 +839,45 @@ const htmlModules = [
   <title>Hero Section</title>
 </head>
 <body>
-  <header>
-    <h2>StackLearner</h2>
-  </header>
-
   <section id="hero">
     <h1>Learn Web Development the Easy Way</h1>
-    <p>Master HTML, CSS, and JavaScript with interactive lessons and hands-on projects. Start your coding journey today!</p>
+    <p>Master HTML, CSS, and JavaScript with interactive lessons.</p>
     <a href="#courses">Start Learning</a>
-    <a href="#about">Learn More</a>
-  </section>
-
-  <section id="courses">
-    <h2>Our Courses</h2>
-    <p>HTML, CSS, JavaScript and more...</p>
   </section>
 </body>
 </html>`,
-    expectedOutput: 'A page with a prominent hero section containing a headline, description, and two call-to-action links.',
+    expectedOutput: 'A prominent hero banner with headline and CTA button.',
     notes: [
-      'The hero section should be visually impactful (CSS will help with that).',
-      'Keep the heading short and clear.',
-      'Include 1-2 call-to-action buttons maximum.',
       'The hero section sets the first impression of your website.',
+      'Include 1-2 call-to-action buttons maximum.',
     ],
     commonMistakes: [
       'Making the hero section too text-heavy.',
       'Having no clear call-to-action.',
-      'Using vague headings like "Welcome" without context.',
-      'Not making the hero section responsive for mobile.',
     ],
     practicePrompt: 'Create a hero section with a catchy heading, a short description, and a "Get Started" button.',
+    interviewQuestions: [
+      'What is a Hero Section in web design?',
+      'What key elements make a hero section effective?',
+    ],
+    miniTask: 'Write a <section> with a main heading, a paragraph, and a call-to-action <a> button.',
   },
   {
     id: 17,
     title: 'Main Content Section',
+    category: 'Page Components',
     explanation:
-      'The <main> element wraps the primary content of your webpage — the content that is unique to this page and not repeated across other pages (like header and footer). There should be only one <main> element per page. Inside <main>, you can use <section>, <article>, and other elements to organize content. The main content is what users come to your page for.',
+      'The <main> element wraps the primary content of your webpage — the content that is unique to this page and not repeated across other pages (like header and footer). There should be only one <main> element per page.',
     analogy:
-      'If a webpage is a newspaper, the <main> element is the actual news articles — the core content. The header is the newspaper\'s logo and date, the footer is the fine print. But the main section is the actual stories you came to read.',
+      'If a webpage is a newspaper, the <main> element is the actual news articles — the core content. The header is the newspaper\'s logo and date, the footer is the fine print.',
+    thanglishAnalogy:
+      'Newspaper-la main news stories dhane <main> tag! Header & footer ellaa page-layum irukkum, aanaa <main> la dhane indha specific page-oda actual kathai irukkum.',
+    analogyConnection: '<main> = Main News Article | Header = Newspaper Logo | Footer = Publisher Details',
+    internalWorking: 'Marks main ARIA landmark region in document tree.',
     syntax:
 `<main>
-  <section>
-    <h2>Section Title</h2>
-    <p>Section content...</p>
-  </section>
-  <section>
-    <h2>Another Section</h2>
-    <p>More content...</p>
-  </section>
+  <section>Content 1</section>
+  <section>Content 2</section>
 </main>`,
     codeExample:
 `<!DOCTYPE html>
@@ -892,56 +887,46 @@ const htmlModules = [
   <title>Main Content</title>
 </head>
 <body>
-  <header>
-    <h1>Learning Platform</h1>
-  </header>
-
   <main>
     <section>
       <h2>Latest Lessons</h2>
       <p>HTML Basics - Learn the building blocks of the web.</p>
-      <p>CSS Styling - Make your websites beautiful.</p>
-    </section>
-
-    <section>
-      <h2>Featured Projects</h2>
-      <p>Portfolio Website - Build your first portfolio.</p>
-      <p>Blog Template - Create a simple blog layout.</p>
     </section>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Learning Platform</p>
-  </footer>
 </body>
 </html>`,
-    expectedOutput: 'A page with a header, two main content sections (lessons and projects), and a footer.',
+    expectedOutput: 'Main content container holding page sections.',
     notes: [
       'Only one <main> element per page.',
       '<main> should not include header, footer, or nav.',
-      'The content inside <main> should be unique to this page.',
-      'Screen readers use <main> to skip directly to content.',
     ],
     commonMistakes: [
       'Having multiple <main> elements.',
-      'Including the header or footer inside <main>.',
-      'Not using <main> at all — affects accessibility.',
-      'Putting sidebar content inside <main> (use <aside> instead).',
+      'Including header or footer inside <main>.',
     ],
     practicePrompt: 'Create a page with a <main> element containing 3 different sections with headings and content.',
+    interviewQuestions: [
+      'Why can there be only one <main> tag per page?',
+      'Can <main> be nested inside <article>?',
+    ],
+    miniTask: 'Wrap two <section> tags inside a single <main> tag.',
   },
   {
     id: 18,
     title: 'About Section',
+    category: 'Page Components',
     explanation:
-      'The About section tells visitors about the website, organization, or person behind it. It typically includes a brief introduction, mission statement, team information, or company history. In HTML, it\'s created using a <section> with an id of "about". This section builds trust and helps users understand the purpose of the website.',
+      'The About section tells visitors about the website, organization, or person behind it. It typically includes a brief introduction, mission statement, team information, or company history.',
     analogy:
-      'The About section is like the "About the Author" page in a book. It tells readers who created this, why they created it, and what their mission is. It builds a personal connection with the audience.',
+      'The About section is like the "About the Author" page in a book. It tells readers who created this, why they created it, and what their mission is.',
+    thanglishAnalogy:
+      'Book-la "About the Author" page dhane About Section! Naanga yaaru, namma goal enna, enna senjutrukkom nu urimaiya sollura place.',
+    analogyConnection: 'About Section = Author Profile Page | Mission = Author Goal | Features = Achievements',
+    internalWorking: 'Structural section container identified by id="about" for hash navigation.',
     syntax:
 `<section id="about">
   <h2>About Us</h2>
-  <p>Description of who you are.</p>
-  <p>Your mission and values.</p>
+  <p>Introduction text...</p>
 </section>`,
     codeExample:
 `<!DOCTYPE html>
@@ -951,61 +936,43 @@ const htmlModules = [
   <title>About Section</title>
 </head>
 <body>
-  <header>
-    <h1>CodeCraft Academy</h1>
-    <nav>
-      <a href="#home">Home</a> |
-      <a href="#about">About</a> |
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <p>CodeCraft Academy is an online learning platform dedicated to teaching web development to absolute beginners.</p>
-      <p>Our mission is to make coding accessible, fun, and practical for everyone.</p>
-      <h3>What We Offer</h3>
-      <ul>
-        <li>Interactive HTML lessons</li>
-        <li>Hands-on coding exercises</li>
-        <li>Real-world projects</li>
-        <li>Supportive learning community</li>
-      </ul>
-    </section>
-  </main>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>StackLearner is an interactive web development learning platform.</p>
+  </section>
 </body>
 </html>`,
-    expectedOutput: 'A page with an About section containing a description, mission statement, and a list of offerings.',
+    expectedOutput: 'An About Us section introducing the platform.',
     notes: [
       'Keep the About section concise and authentic.',
       'Use lists to highlight key features or values.',
-      'Include team information if applicable.',
-      'The About section improves SEO when it includes relevant keywords.',
     ],
     commonMistakes: [
       'Making the About section too long and boring.',
-      'Not having an About section at all.',
-      'Using generic filler text instead of real content.',
       'Forgetting to add an id for navigation links to work.',
     ],
     practicePrompt: 'Create an About section for a fictional coding school with a description, mission, and list of courses.',
+    interviewQuestions: [
+      'How does section id help in single page navigation?',
+    ],
+    miniTask: 'Create a <section id="about"> with an <h2> and 2 paragraphs.',
   },
   {
     id: 19,
     title: 'Services Section',
+    category: 'Page Components',
     explanation:
-      'The Services (or Features) section showcases what you offer. It typically displays services, products, or features in a structured, easy-to-scan layout. Each service usually has a title, brief description, and sometimes an icon or image. This section helps users quickly understand the value your website provides. In HTML, it\'s built using a <section> with service items organized in a list or grid.',
+      'The Services (or Features) section showcases what you offer. It typically displays services, products, or features in a structured, easy-to-scan layout.',
     analogy:
-      'The Services section is like a restaurant menu. Each dish (service) has a name (title), a brief description (what it includes), and sometimes a photo (icon). Customers scan the menu to find what they want.',
+      'The Services section is like a restaurant menu. Each dish (service) has a name (title), a brief description (what it includes), and sometimes a photo (icon).',
+    thanglishAnalogy:
+      'Restaurant Menu Card dhane Services Section! Dish Name (Service Title), Details (Description), Price/Icon (Features).',
+    analogyConnection: 'Services = Menu List | Service Item = Menu Dish | Description = Ingredients',
+    internalWorking: 'Container grouping service feature blocks, styled via CSS flex/grid.',
     syntax:
 `<section id="services">
-  <h2>Our Services</h2>
-  <div>
-    <h3>Service Title</h3>
-    <p>Service description</p>
-  </div>
-  <!-- More services... -->
+  <h2>Services</h2>
+  <div><h3>Web Dev</h3><p>Build websites</p></div>
 </section>`,
     codeExample:
 `<!DOCTYPE html>
@@ -1017,61 +984,43 @@ const htmlModules = [
 <body>
   <section id="services">
     <h2>Our Services</h2>
-    
     <div>
       <h3>🌐 Web Development</h3>
       <p>Build modern, responsive websites using HTML, CSS, and JavaScript.</p>
     </div>
-    
-    <div>
-      <h3>📱 Mobile App Development</h3>
-      <p>Create cross-platform mobile applications for iOS and Android.</p>
-    </div>
-    
-    <div>
-      <h3>🎨 UI/UX Design</h3>
-      <p>Design beautiful, user-friendly interfaces that people love to use.</p>
-    </div>
-    
-    <div>
-      <h3>☁️ Cloud Solutions</h3>
-      <p>Deploy and manage your applications on cloud platforms.</p>
-    </div>
   </section>
 </body>
 </html>`,
-    expectedOutput: 'A services section with 4 services, each with an emoji icon, title, and description.',
+    expectedOutput: 'Services showcase with icons and descriptions.',
     notes: [
       'Keep service descriptions short and benefit-focused.',
-      'Use consistent formatting for all service items.',
-      'Emojis or icons help users quickly identify services.',
-      'CSS Grid or Flexbox is used to create multi-column layouts.',
+      'Icons help users quickly identify services.',
     ],
     commonMistakes: [
       'Writing too much text for each service.',
-      'Inconsistent formatting across service items.',
-      'Not highlighting the key benefit of each service.',
-      'Using too many or too few services (3-6 is ideal).',
     ],
     practicePrompt: 'Create a Services section with 4 services for a web development company.',
+    interviewQuestions: [
+      'How to structure feature cards in HTML?',
+    ],
+    miniTask: 'Build a Services section with 3 <div> cards.',
   },
   {
     id: 20,
     title: 'Contact Section',
+    category: 'Page Components',
     explanation:
-      'The Contact section provides ways for users to reach you. It typically includes a contact form, email address, phone number, physical address, and links to social media. A contact form collects user inquiries directly on the website. This section is essential for businesses, portfolios, and service websites — it\'s how potential clients or users communicate with you.',
+      'The Contact section provides ways for users to reach you. It typically includes a contact form, email address, phone number, physical address, and links to social media.',
     analogy:
-      'The Contact section is like a reception desk in an office. It has a phone (phone number), a mailbox (email), a feedback form (contact form), and directions (address). Everything a visitor needs to get in touch.',
+      'The Contact section is like a reception desk in an office. It has a phone (phone number), a mailbox (email), a feedback form (contact form), and directions (address).',
+    thanglishAnalogy:
+      'Office Reception Desk dhane Contact Section! Feedback form, Phone number, Email address, Location map ellam anga dhaan irukkum.',
+    analogyConnection: 'Form = Inquiry Form | Phone/Email = Desk Contacts | Address = Office Map',
+    internalWorking: 'Interactive section capturing user feedback via form submit controls.',
     syntax:
 `<section id="contact">
   <h2>Contact Us</h2>
-  <form>
-    <input type="text" placeholder="Name">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Message"></textarea>
-    <button type="submit">Send</button>
-  </form>
-  <p>Email: contact@example.com</p>
+  <form><input type="email"><textarea></textarea><button>Send</button></form>
 </section>`,
     codeExample:
 `<!DOCTYPE html>
@@ -1082,65 +1031,44 @@ const htmlModules = [
 </head>
 <body>
   <section id="contact">
-    <h2>Get in Touch</h2>
-    <p>Have questions? Fill out the form below or reach us directly.</p>
-    
+    <h2>Contact Us</h2>
     <form>
-      <p>
-        <label for="name">Your Name:</label><br>
-        <input type="text" id="name" name="name" placeholder="John Doe" required>
-      </p>
-      <p>
-        <label for="email">Your Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="john@example.com" required>
-      </p>
-      <p>
-        <label for="subject">Subject:</label><br>
-        <input type="text" id="subject" name="subject" placeholder="How can we help?">
-      </p>
-      <p>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-      </p>
-      <button type="submit">Send Message</button>
+      <input type="email" placeholder="Your Email" required><br><br>
+      <textarea placeholder="Your Message" required></textarea><br><br>
+      <button type="submit">Send</button>
     </form>
-
-    <h3>Other Ways to Reach Us</h3>
-    <p>📧 Email: hello@stacklearner.com</p>
-    <p>📞 Phone: +91 98765 43210</p>
-    <p>📍 Address: 123 Learning Street, Tech City</p>
   </section>
 </body>
 </html>`,
-    expectedOutput: 'A contact section with a form (name, email, subject, message) and contact information.',
+    expectedOutput: 'Contact section with an email field, message box, and submit button.',
     notes: [
       'Always use labels with form inputs for accessibility.',
       'The required attribute ensures fields are filled before submission.',
-      'Placeholder text guides users on what to enter.',
-      'In a real project, you\'d need server-side code to process form submissions.',
     ],
     commonMistakes: [
-      'Not providing alternative contact methods (just a form).',
-      'Missing labels on form inputs.',
-      'Not using type="email" for email fields.',
-      'Forgetting the required attribute on important fields.',
+      'Not providing alternative contact methods.',
     ],
     practicePrompt: 'Create a contact section with a form (name, email, message) and contact information below.',
+    interviewQuestions: [
+      'What elements are essential in a Contact Section?',
+    ],
+    miniTask: 'Create a contact form section with email and message inputs.',
   },
   {
     id: 21,
     title: 'Footer Section',
+    category: 'Page Components',
     explanation:
-      'The <footer> element appears at the bottom of a webpage. It typically contains copyright information, links to privacy policy and terms of service, social media links, a brief site map, and contact information. The footer is consistent across all pages and helps users find important links and legal information. It\'s the "closing" of your webpage.',
+      'The <footer> element appears at the bottom of a webpage. It typically contains copyright information, links to privacy policy and terms of service, social media links, a brief site map, and contact information.',
     analogy:
-      'The footer is like the back cover of a book — it has the publisher info (copyright), fine print (legal links), and contact details. It wraps up the page and provides essential background information.',
+      'The footer is like the back cover of a book — it has the publisher info (copyright), fine print (legal links), and contact details.',
+    thanglishAnalogy:
+      'Book Back Cover dhane <footer>! Copyright details ©, Legal terms, Publisher address, Social media links ellam bottom-la veppom.',
+    analogyConnection: '<footer> = Book Back Cover | Copyright = Publisher Signature | Links = Fine Print Terms',
+    internalWorking: 'Document bottom ARIA landmark content region.',
     syntax:
 `<footer>
-  <p>&copy; 2026 Company Name. All rights reserved.</p>
-  <nav>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-  </nav>
+  <p>&copy; 2026 StackLearner. All rights reserved.</p>
 </footer>`,
     codeExample:
 `<!DOCTYPE html>
@@ -1150,74 +1078,44 @@ const htmlModules = [
   <title>Footer Section</title>
 </head>
 <body>
-  <header>
-    <h1>My Website</h1>
-  </header>
-
-  <main>
-    <p>Main content goes here.</p>
-  </main>
-
   <footer>
-    <h3>Quick Links</h3>
-    <nav>
-      <a href="#home">Home</a> |
-      <a href="#about">About</a> |
-      <a href="#services">Services</a> |
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <h3>Follow Us</h3>
-    <p>
-      <a href="#">Facebook</a> |
-      <a href="#">Twitter</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">LinkedIn</a>
-    </p>
-
     <p>&copy; 2026 StackLearner. All rights reserved.</p>
-    <p>
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms of Service</a>
-    </p>
   </footer>
 </body>
 </html>`,
-    expectedOutput: 'A page with a footer containing quick links, social media links, copyright, and legal links.',
+    expectedOutput: 'A clean footer with copyright notice.',
     notes: [
-      'A page can have multiple footers — one for the page and one for sections.',
       'Use &copy; for the copyright symbol ©.',
-      'Footer links help with SEO (internal linking).',
       'Keep the footer organized with clear sections.',
     ],
     commonMistakes: [
-      'Putting too much content in the footer.',
-      'Not including copyright information.',
-      'Forgetting to update the year in the copyright.',
-      'Using images in the footer that are too large.',
+      'Forgetting copyright information.',
     ],
     practicePrompt: 'Create a footer with copyright info, 4 quick links, and social media links.',
+    interviewQuestions: [
+      'What usually goes into an HTML5 <footer> tag?',
+    ],
+    miniTask: 'Write a <footer> tag with copyright symbol &copy; and current year.',
   },
   {
     id: 22,
     title: 'Complete HTML Webpage Project',
+    category: 'Projects',
     explanation:
-      'Now it\'s time to combine everything you\'ve learned! A complete HTML webpage includes all the sections working together: DOCTYPE declaration, html, head, body, header, navigation, hero section, main content with multiple sections (about, services, contact), and a footer. This is how real websites are structured. Every professional website follows this general layout pattern.',
+      'Now it\'s time to combine everything you\'ve learned! A complete HTML webpage includes all the sections working together: DOCTYPE declaration, html, head, body, header, navigation, hero section, main content with multiple sections, and a footer.',
     analogy:
-      'Building a complete webpage is like building a complete house. You\'ve learned about each room individually (header = entrance, nav = hallway, hero = living room, etc.). Now you assemble all the rooms together to create a complete, functional house that people can live in.',
+      'Building a complete webpage is like building a complete house. You\'ve learned about each room individually. Now you assemble all the rooms together to create a complete, functional house.',
+    thanglishAnalogy:
+      'Full veedu kattiyachu! Hall (Hero), Rooms (Sections), Entrance (Header), Backyard (Footer) ellam serthu complete webpage ready!',
+    analogyConnection: 'Complete HTML = Full House Assembly | Sections = Rooms | Layout = Blueprint Plan',
+    internalWorking: 'Full DOM tree constructed and rendered as a complete Web Document.',
     syntax:
 `<!DOCTYPE html>
-<html lang="en">
-<head>...</head>
+<html>
+<head><title>Title</title></head>
 <body>
   <header>...</header>
-  <nav>...</nav>
-  <section id="hero">...</section>
-  <main>
-    <section id="about">...</section>
-    <section id="services">...</section>
-    <section id="contact">...</section>
-  </main>
+  <main>...</main>
   <footer>...</footer>
 </body>
 </html>`,
@@ -1226,88 +1124,36 @@ const htmlModules = [
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Complete Webpage</title>
 </head>
 <body>
   <header>
     <h1>🎓 TechLearn Academy</h1>
   </header>
-
-  <nav>
-    <a href="#home">Home</a> |
-    <a href="#about">About</a> |
-    <a href="#services">Services</a> |
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="home">
-    <h2>Welcome to TechLearn Academy</h2>
-    <p>Your journey to becoming a web developer starts here.</p>
-    <a href="#services">Explore Courses</a>
-  </section>
-
   <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <p>TechLearn Academy is dedicated to making web development accessible to everyone.</p>
-    </section>
-
-    <section id="services">
-      <h2>Our Courses</h2>
-      <div>
-        <h3>HTML Basics</h3>
-        <p>Learn the structure of web pages.</p>
-      </div>
-      <div>
-        <h3>CSS Styling</h3>
-        <p>Make your websites beautiful.</p>
-      </div>
-      <div>
-        <h3>JavaScript</h3>
-        <p>Add interactivity to your projects.</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form>
-        <p>
-          <label for="name">Name:</label><br>
-          <input type="text" id="name" placeholder="Your name">
-        </p>
-        <p>
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" placeholder="Your email">
-        </p>
-        <p>
-          <label for="msg">Message:</label><br>
-          <textarea id="msg" rows="4" placeholder="Your message"></textarea>
-        </p>
-        <button type="submit">Send</button>
-      </form>
+    <section>
+      <h2>Welcome</h2>
+      <p>Start your Web Dev journey today!</p>
     </section>
   </main>
-
   <footer>
-    <p>&copy; 2026 TechLearn Academy. All rights reserved.</p>
+    <p>&copy; 2026 TechLearn Academy.</p>
   </footer>
 </body>
 </html>`,
-    expectedOutput: 'A complete webpage with header, navigation, hero section, about, services, contact form, and footer.',
+    expectedOutput: 'A fully structured single-page HTML document.',
     notes: [
       'This is the standard structure used by professional websites.',
       'Each section should have a unique id for navigation.',
-      'The <main> element wraps the core content sections.',
-      'CSS will be used later to style and position these sections beautifully.',
     ],
     commonMistakes: [
       'Not wrapping content sections inside <main>.',
-      'Forgetting the viewport meta tag for mobile responsiveness.',
-      'Having duplicate id attributes.',
-      'Not following the proper nesting hierarchy.',
     ],
-    practicePrompt: 'Build a complete HTML webpage for a fictional business with all sections: header, nav, hero, about, services, contact, and footer.',
+    practicePrompt: 'Build a complete HTML webpage for a fictional business with all sections.',
+    interviewQuestions: [
+      'What are the core semantic sections of a complete webpage layout?',
+    ],
+    miniTask: 'Assemble a complete HTML page with <header>, <main>, <section>, and <footer>.',
   },
 ];
 

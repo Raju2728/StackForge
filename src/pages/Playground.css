@@ -1,9 +1,11 @@
-/* Playground.css */
+/* Playground.css — Multi-Language Playground Styles */
 .playground-page {
-  padding: 24px;
+  padding: 20px 24px;
   height: calc(100vh - var(--header-height));
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  background: var(--bg);
 }
 
 .playground-header {
@@ -13,17 +15,27 @@
   margin-bottom: 16px;
   flex-wrap: wrap;
   gap: 12px;
+  flex-shrink: 0;
+}
+
+.playground-title-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .playground-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0;
 }
 
-.playground-editor-area {
+.playground-top-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.playground-workspace {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
@@ -31,13 +43,176 @@
   min-height: 0;
 }
 
-@media (max-width: 768px) {
+.playground-editor-section {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 0;
+}
+
+.playground-preview-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Tabs */
+.playground-tabs {
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--surface-border);
+  padding: 4px 8px 0;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.playground-tab {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: var(--radius) var(--radius) 0 0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.playground-tab:hover {
+  color: var(--text);
+  background: var(--surface-border);
+}
+
+.playground-tab.active {
+  background: var(--surface);
+  color: var(--primary);
+  border-top: 2px solid var(--primary);
+}
+
+.playground-tab-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+  padding-bottom: 4px;
+}
+
+.editor-mini-btn {
+  background: none;
+  border: 1px solid var(--surface-border);
+  color: var(--text-muted);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.editor-mini-btn:hover {
+  background: var(--surface-border);
+  color: var(--text);
+}
+
+/* CodeMirror Wrapper */
+.playground-codemirror-wrapper {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.playground-codemirror-wrapper .cm-editor {
+  height: 100%;
+  font-size: 0.88rem;
+  font-family: 'Fira Code', Consolas, Monaco, monospace;
+}
+
+/* Console Panel */
+.playground-console-panel {
+  height: 140px;
+  border-top: 1px solid var(--surface-border);
+  background: #1e1e2e;
+  color: #cdd6f4;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.console-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px;
+  background: #181825;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #a6adc8;
+  border-bottom: 1px solid #313244;
+}
+
+.console-clear-btn {
+  background: none;
+  border: none;
+  color: #f38ba8;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.console-clear-btn:hover {
+  text-decoration: underline;
+}
+
+.console-body {
+  flex: 1;
+  padding: 8px 14px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  overflow-y: auto;
+}
+
+.console-empty {
+  color: #6c7086;
+  font-style: italic;
+}
+
+.console-line {
+  padding: 2px 0;
+  word-break: break-all;
+}
+
+.console-time {
+  color: #6c7086;
+  font-size: 0.72rem;
+}
+
+.console-error {
+  color: #f38ba8;
+  font-weight: 600;
+}
+
+.console-log {
+  color: #a6e3a1;
+}
+
+@media (max-width: 900px) {
   .playground-page {
     padding: 16px;
     height: auto;
     min-height: calc(100vh - var(--header-height));
   }
-  .playground-editor-area {
+
+  .playground-workspace {
     grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .playground-editor-section {
+    height: 450px;
+  }
+
+  .playground-preview-section {
+    height: 450px;
   }
 }

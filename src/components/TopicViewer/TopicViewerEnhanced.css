@@ -1,0 +1,197 @@
+/* TopicViewerEnhanced.css — Additional styles for enhanced topic sections */
+
+/* Category badge */
+.topic-category-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+
+/* Thanglish Analogy */
+.topic-thanglish-analogy {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-bg), rgba(139, 92, 246, 0.08));
+  border: 1px solid var(--primary-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 20px;
+  margin-top: 4px;
+}
+
+.thanglish-quote-mark {
+  position: absolute;
+  top: -8px;
+  left: 16px;
+  font-size: 2.2rem;
+  color: var(--primary);
+  line-height: 1;
+  background: var(--surface);
+  padding: 0 6px;
+  border-radius: var(--radius-sm);
+}
+
+.thanglish-text {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.thanglish-label {
+  margin-top: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: right;
+}
+
+/* Analogy-Code Connection */
+.topic-connection-box, .topic-connection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.connection-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Mini Task */
+.topic-mini-task {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(5, 150, 105, 0.04));
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.topic-mini-task strong {
+  color: var(--success);
+}
+
+/* Interview Questions Dropdown Accordion */
+.topic-interview-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.interview-details-item {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.interview-details-item:hover {
+  border-color: var(--primary-light);
+}
+
+.interview-details-item[open] {
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.1);
+}
+
+.interview-summary {
+  padding: 14px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  user-select: none;
+}
+
+.interview-summary::-webkit-details-marker {
+  display: none;
+}
+
+.interview-q-badge {
+  background: var(--primary-bg);
+  color: var(--primary);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.interview-q-text {
+  flex: 1;
+  font-size: 0.93rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.interview-arrow {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.interview-details-item[open] .interview-arrow {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.interview-answer-content {
+  padding: 16px 18px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--surface-border);
+  font-size: 0.91rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  animation: fadeIn 0.2s ease;
+}
+
+.interview-answer-badge {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.interview-answer-text {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .topic-thanglish-analogy {
+    padding: 24px 16px 16px;
+  }
+
+  .connection-item {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  .interview-summary {
+    padding: 12px 14px;
+  }
+
+  .interview-answer-content {
+    padding: 12px 14px;
+  }
+}

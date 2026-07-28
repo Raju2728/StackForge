@@ -1,7 +1,7 @@
 /**
  * Home.jsx
  * Landing/dashboard page with hero, workflow diagram, section visualizer,
- * quick-start cards, and future features.
+ * quick-start cards for HTML, CSS, and JS, and future features.
  */
 import { useNavigate } from 'react-router-dom';
 import WorkflowDiagram from '../components/WorkflowDiagram/WorkflowDiagram';
@@ -15,8 +15,6 @@ const futureFeatures = [
   { icon: '👨‍🏫', name: 'Faculty Dashboard', status: 'Coming Soon' },
   { icon: '❓', name: 'Quiz Module', status: 'Coming Soon' },
   { icon: '🎓', name: 'Certificate', status: 'Coming Soon' },
-  { icon: '🎨', name: 'CSS Course', status: 'Coming Soon' },
-  { icon: '⚡', name: 'JavaScript Course', status: 'Coming Soon' },
 ];
 
 export default function Home() {
@@ -27,54 +25,83 @@ export default function Home() {
       <div className="page-container">
         {/* Hero Section */}
         <div className="home-hero">
-          <div className="home-hero-badge">🚀 Start your web development journey</div>
+          <div className="home-hero-badge">🚀 Complete Web Development Ecosystem</div>
           <h1 className="home-hero-title">
-            Learn to Build Webpages <span>with HTML</span>
+            Learn Web Development <span>with HTML, CSS & JS</span>
           </h1>
           <p className="home-hero-desc">
-            Master HTML from scratch with interactive lessons, hands-on practice, and a live code editor. 
-            No prior coding experience required — perfect for college students and absolute beginners.
+            Master full-stack frontend development with interactive lessons, Thanglish real-world analogies, hands-on practice, and an advanced multi-language code playground. Perfect for students and beginners!
           </p>
           <div className="home-hero-actions">
             <button
               className="btn btn-primary btn-lg"
               onClick={() => navigate('/learn/1')}
             >
-              🚀 Start Learning HTML
+              🧱 Learn HTML
+            </button>
+            <button
+              className="btn btn-secondary btn-lg"
+              onClick={() => navigate('/css/learn/1')}
+              style={{ background: '#a855f7', color: 'white', borderColor: '#a855f7' }}
+            >
+              🎨 Learn CSS
+            </button>
+            <button
+              className="btn btn-secondary btn-lg"
+              onClick={() => navigate('/js/learn/1')}
+              style={{ background: '#eab308', color: 'black', borderColor: '#eab308' }}
+            >
+              ⚡ Learn JS
             </button>
             <button
               className="btn btn-outline btn-lg"
               onClick={() => navigate('/playground')}
             >
-              🎮 Try the Playground
+              🎮 Try Playground
             </button>
           </div>
         </div>
 
         {/* Quick Start Cards */}
-        <h2 className="home-section-title">Quick Start</h2>
-        <p className="home-section-subtitle">Choose where you want to begin</p>
+        <h2 className="home-section-title">Explore Courses</h2>
+        <p className="home-section-subtitle">Select a course to start your learning journey</p>
         <div className="quick-start-grid">
           <LessonCard
-            icon="📖"
-            title="HTML Lessons"
-            description="22 interactive modules covering everything from basic tags to building complete webpages."
+            icon="🧱"
+            title="HTML Course"
+            description="22 interactive modules with real-world analogies covering structural tags, forms, tables, and semantic HTML."
             to="/learn/1"
             badge="22 Modules"
             badgeClass="badge-primary"
           />
           <LessonCard
-            icon="✏️"
-            title="Practice Exercises"
-            description="10 guided activities to test your skills — from creating headings to building full pages."
-            to="/practice"
-            badge="10 Tasks"
+            icon="🎨"
+            title="CSS Course"
+            description="68 comprehensive topics covering selectors, Flexbox, Grid, animations, and responsive design with interior design analogies."
+            to="/css/learn/1"
+            badge="68 Modules"
+            badgeClass="badge-warning"
+          />
+          <LessonCard
+            icon="⚡"
+            title="JavaScript Course"
+            description="65 in-depth modules covering variables, DOM manipulation, ES6+, async/await, and APIs with website brain analogies."
+            to="/js/learn/1"
+            badge="65 Modules"
             badgeClass="badge-success"
           />
           <LessonCard
+            icon="✏️"
+            title="Practice Exercises"
+            description="Guided coding activities to test your HTML, CSS, and JS skills with live feedback."
+            to="/practice"
+            badge="Practice Tasks"
+            badgeClass="badge-primary"
+          />
+          <LessonCard
             icon="🎮"
-            title="Code Playground"
-            description="Write, run, and preview HTML code instantly with our built-in editor and live preview."
+            title="Multi-Lang Playground"
+            description="Tabbed HTML, CSS, and JavaScript editor with live iframe preview and console error handling."
             to="/playground"
             badge="Live Editor"
             badgeClass="badge-warning"
@@ -89,9 +116,9 @@ export default function Home() {
 
         {/* Future Features */}
         <section className="future-features">
-          <h2 className="home-section-title">Coming Soon</h2>
+          <h2 className="home-section-title">Upcoming Features</h2>
           <p className="home-section-subtitle">
-            Exciting features planned for future versions of StackLearner
+            Exciting enhancements coming soon to StackLearner
           </p>
           <div className="future-features-grid">
             {futureFeatures.map(feature => (

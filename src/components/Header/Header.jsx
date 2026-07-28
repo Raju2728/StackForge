@@ -14,18 +14,18 @@ export default function Header() {
 
   const navLinks = [
     { to: '/', label: 'Home', icon: '🏠' },
-    { to: '/learn/1', label: 'HTML Learning', icon: '📖' },
+    { to: '/learn/1', label: 'HTML', icon: '🧱' },
+    { to: '/css/learn/1', label: 'CSS', icon: '🎨' },
+    { to: '/js/learn/1', label: 'JavaScript', icon: '⚡' },
     { to: '/practice', label: 'Practice', icon: '✏️' },
     { to: '/playground', label: 'Playground', icon: '🎮' },
     { to: '/progress', label: 'Progress', icon: '📊' },
   ];
 
-  const lockedLinks = [
-    { to: '/css', label: 'CSS', tag: 'Coming Soon' },
-    { to: '/javascript', label: 'JavaScript', tag: 'Coming Soon' },
-  ];
-
-  const isLearningPage = location.pathname.startsWith('/learn');
+  const isLearningPage =
+    location.pathname.startsWith('/learn') ||
+    location.pathname.startsWith('/css/learn') ||
+    location.pathname.startsWith('/js/learn');
 
   return (
     <header className="header">
@@ -70,16 +70,6 @@ export default function Header() {
             }
           >
             {link.label}
-          </NavLink>
-        ))}
-        {lockedLinks.map(link => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            className="header-nav-link locked"
-          >
-            {link.label}
-            <span className="locked-tag">{link.tag}</span>
           </NavLink>
         ))}
       </nav>
@@ -128,17 +118,6 @@ export default function Header() {
                 onClick={() => setMobileNavOpen(false)}
               >
                 {link.icon} {link.label}
-              </NavLink>
-            ))}
-            {lockedLinks.map(link => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className="mobile-nav-link locked"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                🔒 {link.label}
-                <span className="locked-tag">{link.tag}</span>
               </NavLink>
             ))}
           </nav>

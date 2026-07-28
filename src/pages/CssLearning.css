@@ -1,0 +1,17 @@
+/* CssLearning.css */
+.css-learning-layout {
+  display: flex;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.css-learning-content {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--bg);
+}
+
+@media (max-width: 900px) {
+  .css-learning-layout {
+    flex-direction: column;
+  }
+}
