@@ -1,4 +1,4 @@
-/* Progress.css */
+/* Progress.css — Enhanced with badges and ring chart */
 .progress-page {
   max-width: 1000px;
   margin: 0 auto;
@@ -7,29 +7,58 @@
 
 .progress-page-header {
   margin-bottom: 32px;
+  text-align: center;
 }
 
 .progress-page-title {
-  font-size: 1.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 8px;
 }
 
 .progress-page-desc {
   color: var(--text-secondary);
+  font-size: 1.05rem;
 }
 
+/* Overall Ring */
 .progress-overview {
   background: linear-gradient(135deg, var(--primary-bg), var(--bg));
   border: 1px solid var(--surface-border);
   border-radius: var(--radius-xl);
-  padding: 32px;
+  padding: 40px 32px;
   margin-bottom: 32px;
   text-align: center;
 }
 
-.progress-overview-pct {
-  font-size: 4rem;
+.progress-ring {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--ring-color) calc(var(--pct) * 1%),
+    var(--bg-secondary) calc(var(--pct) * 1%)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  position: relative;
+}
+.progress-ring::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.progress-ring-pct {
+  position: relative;
+  z-index: 1;
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.4rem;
   font-weight: 900;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   -webkit-background-clip: text;
@@ -41,9 +70,74 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
+/* Badges Section */
+.progress-badges-section {
+  margin-bottom: 40px;
+}
+
+.progress-section-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.progress-badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.progress-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.progress-badge.earned {
+  background: var(--success-bg);
+  border: 1px solid var(--success);
+  color: #065f46;
+}
+[data-theme="dark"] .progress-badge.earned {
+  color: #6ee7b7;
+}
+
+.progress-badge.locked {
+  background: var(--bg-secondary);
+  border: 1px solid var(--surface-border);
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.progress-badge-icon {
+  font-size: 1.2rem;
+}
+
+.progress-badge-label {
+  white-space: nowrap;
+}
+
+.progress-badge-check {
+  color: var(--success);
+  font-weight: 800;
+}
+
+.progress-badge-lock {
+  font-size: 0.8rem;
+}
+
+/* Stats Grid */
 .progress-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -51,11 +145,13 @@
   margin-bottom: 32px;
 }
 
+/* Module Status */
 .progress-module-status {
   margin-top: 32px;
 }
 
 .progress-module-status-title {
+  font-family: 'Outfit', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 16px;
@@ -79,7 +175,8 @@
 }
 
 .progress-module-item:hover {
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .progress-topic-grid {
@@ -110,7 +207,11 @@
   .progress-module-list {
     grid-template-columns: 1fr;
   }
-  .progress-overview-pct {
-    font-size: 3rem;
+  .progress-ring {
+    width: 130px;
+    height: 130px;
+  }
+  .progress-ring-pct {
+    font-size: 1.8rem;
   }
 }

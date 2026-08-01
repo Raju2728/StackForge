@@ -13,6 +13,9 @@ import Practice from './pages/Practice';
 import Progress from './pages/Progress';
 import Playground from './pages/Playground';
 import FinalProject from './pages/FinalProject';
+import QuizPage from './pages/QuizPage';
+import InterviewPrep from './pages/InterviewPrep';
+import Roadmap from './pages/Roadmap';
 
 export default function App() {
   return (
@@ -32,6 +35,9 @@ export default function App() {
             <Route path="/progress" element={<Progress />} />
             <Route path="/playground" element={<Playground />} />
             <Route path="/final-project" element={<FinalProject />} />
+            <Route path="/quiz" element={<QuizPage />} />
+            <Route path="/interview-prep" element={<InterviewPrep />} />
+            <Route path="/roadmap" element={<Roadmap />} />
           </Routes>
         </main>
       </AppProvider>
