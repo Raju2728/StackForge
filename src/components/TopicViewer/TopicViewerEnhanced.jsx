@@ -140,7 +140,8 @@ export default function TopicViewerEnhanced({
   totalTopics,
   basePath,
   courseIcon = '📘',
-  courseName = 'Course',
+  courseName,
+  courseLabel,
   accentColor,
   markComplete,
   markInProgress,
@@ -167,11 +168,13 @@ export default function TopicViewerEnhanced({
     navigate(`${basePath}/${topic.id + 1}`);
   };
 
+  const label = courseName || courseLabel || 'Course';
+
   return (
     <div className="topic-viewer">
       <div className="topic-viewer-header">
         <span className="topic-num-badge" style={accentColor ? { background: `${accentColor}18`, color: accentColor } : undefined}>
-          {courseIcon} Module {topic.id} of {totalTopics}
+          {courseIcon} {label} Module {topic.id} of {totalTopics}
         </span>
         {topic.category && (
           <span className="topic-category-badge">{topic.category}</span>

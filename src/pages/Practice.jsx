@@ -6,6 +6,8 @@ import { useState } from 'react';
 import PracticeTask from '../components/PracticeTask/PracticeTask';
 import practiceActivities from '../data/practiceActivities';
 import { useApp } from '../context/AppContext';
+import Footer from '../components/Footer/Footer';
+import SEO from '../components/SEO/SEO';
 import './Practice.css';
 
 export default function Practice() {
@@ -15,7 +17,14 @@ export default function Practice() {
   const selectedTask = practiceActivities.find(t => t.id === activeTask);
 
   return (
-    <div className="practice-page">
+    <div>
+      <SEO
+        title="Hands-on Frontend Coding Challenges & Guided Practice"
+        description="Solve real-world frontend coding exercises with step-by-step instructions, code validation, hints, and instant visual feedback."
+        canonical="/practice"
+        keywords="frontend practice, html exercises, coding challenges, frontend task"
+      />
+      <div className="practice-page">
       <div className="practice-page-header">
         <h1 className="practice-page-title">✏️ Practice Activities</h1>
         <p className="practice-page-desc">
@@ -80,6 +89,8 @@ export default function Practice() {
           <p>Select a practice task above to get started</p>
         </div>
       )}
+      </div>
+      <Footer />
     </div>
   );
 }

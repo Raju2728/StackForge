@@ -2,9 +2,10 @@
  * InterviewPrep.jsx
  * Dedicated frontend interview preparation page with expandable Q&A organized by technology.
  */
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import interviewData from '../data/interviewData';
 import Footer from '../components/Footer/Footer';
+import SEO from '../components/SEO/SEO';
 import './InterviewPrep.css';
 
 export default function InterviewPrep() {
@@ -12,8 +13,40 @@ export default function InterviewPrep() {
 
   const currentTech = interviewData.find(t => t.id === activeTech);
 
+  const faqSchema = useMemo(() => {
+    const list = [];
+    interviewData.forEach(tech => {
+      tech.categories?.forEach(cat => {
+        cat.questions?.forEach(qItem => {
+          if (list.length < 25) {
+            list.push({
+              '@type': 'Question',
+              name: qItem.q,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: qItem.a,
+              },
+            });
+          }
+        });
+      });
+    });
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: list,
+    };
+  }, []);
+
   return (
     <div>
+      <SEO
+        title="Frontend Interview Preparation — Questions & Answers (HTML, CSS, JS)"
+        description="Comprehensive collection of frontend developer interview questions and detailed answers covering HTML semantics, CSS layout/specificity, modern JavaScript, and React."
+        canonical="/interview-prep"
+        keywords="frontend interview questions, html interview, css interview prep, javascript interview questions, react interview cheatsheet"
+        schema={faqSchema}
+      />
       <div className="page-container">
         <div className="interview-page-header">
           <h1 className="interview-page-title">💼 Frontend Interview Preparation</h1>

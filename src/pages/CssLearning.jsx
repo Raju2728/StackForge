@@ -8,6 +8,7 @@ import CourseSidebar from '../components/CourseSidebar/CourseSidebar';
 import TopicViewerEnhanced from '../components/TopicViewerEnhanced/TopicViewerEnhanced';
 import cssModules from '../data/cssModules';
 import { useApp } from '../context/AppContext';
+import SEO from '../components/SEO/SEO';
 import './HtmlLearning.css';
 
 export default function CssLearning() {
@@ -42,8 +43,28 @@ export default function CssLearning() {
 
   if (!topic) return null;
 
+  const topicSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: `${topic.title} - CSS Learning Module`,
+    description: topic.explanation,
+    articleSection: topic.category || 'CSS',
+    isPartOf: {
+      '@type': 'Course',
+      name: 'Modern CSS3 & Responsive Design',
+      url: 'https://stacklearner.dev/css/learn/1',
+    },
+  };
+
   return (
     <div className="html-learning-layout">
+      <SEO
+        title={`${topic.title} — CSS Course`}
+        description={topic.explanation?.slice(0, 155) || `Learn ${topic.title} with interactive styling examples, analogies, and quizzes on Stack Learner.`}
+        canonical={`/css/learn/${topic.id}`}
+        keywords={`css ${topic.title.toLowerCase()}, learn css, css tutorial, css styling, web design`}
+        schema={topicSchema}
+      />
       <CourseSidebar
         modules={cssModules}
         courseTitle="🎨 CSS Course"

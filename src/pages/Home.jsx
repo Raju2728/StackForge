@@ -9,6 +9,7 @@ import WorkflowDiagram from '../components/WorkflowDiagram/WorkflowDiagram';
 import SectionVisualizer from '../components/SectionVisualizer/SectionVisualizer';
 import LessonCard from '../components/LessonCard/LessonCard';
 import Footer from '../components/Footer/Footer';
+import SEO from '../components/SEO/SEO';
 import './Home.css';
 
 const roadmapLevels = [
@@ -77,6 +78,12 @@ export default function Home() {
 
   return (
     <div>
+      <SEO
+        title="Stack Learner — Master Frontend Web Development from Scratch"
+        description="Learn HTML, CSS, JavaScript, and React with intuitive explanations, real-world analogies, live code playground, quizzes, and interview preparation. 100% free."
+        canonical="/"
+        keywords="frontend developer, learn html, learn css, learn javascript, web development tutorial, react roadmap, coding playground, interview questions"
+      />
       <div className="page-container">
         {/* Hero Section */}
         <section className="hero" id="hero">

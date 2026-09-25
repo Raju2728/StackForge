@@ -1,0 +1,20 @@
+# Robots.txt for Stack Learner
+# Allow all search engine crawlers to discover and index content
+
+User-agent: *
+Allow: /
+Allow: /learn/
+Allow: /css/learn/
+Allow: /js/learn/
+Allow: /roadmap
+Allow: /practice
+Allow: /playground
+Allow: /quiz
+Allow: /interview-prep
+Allow: /final-project
+
+# Disallow user-specific dynamic state pages from indexing
+Disallow: /progress
+
+# Sitemaps
+Sitemap: https://stacklearner.dev/sitemap.xml

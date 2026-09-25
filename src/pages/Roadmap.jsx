@@ -6,6 +6,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import Footer from '../components/Footer/Footer';
+import SEO from '../components/SEO/SEO';
 import './Roadmap.css';
 
 const roadmapLevels = [
@@ -122,6 +123,12 @@ export default function Roadmap() {
 
   return (
     <div>
+      <SEO
+        title="Frontend Developer Roadmap 2026 — Step-by-Step Learning Path"
+        description="Follow this complete 5-level structured roadmap from beginner to job-ready frontend developer. Master HTML, CSS, JavaScript, React, and real-world projects."
+        canonical="/roadmap"
+        keywords="frontend developer roadmap 2026, web development roadmap, learn frontend step by step, html css js path"
+      />
       <div className="page-container">
         <div className="roadmap-page-header">
           <div className="roadmap-page-badge">🗺️ Learning Path</div>

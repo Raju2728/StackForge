@@ -9,6 +9,8 @@ import LivePreview from '../components/LivePreview/LivePreview';
 import CompletionModal from '../components/CompletionModal/CompletionModal';
 import { useApp } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer/Footer';
+import SEO from '../components/SEO/SEO';
 import './FinalProject.css';
 
 const PROJECT_STARTER = `<!DOCTYPE html>
@@ -99,7 +101,14 @@ export default function FinalProject() {
   };
 
   return (
-    <div className="final-project-page">
+    <div>
+      <SEO
+        title="Capstone Project — Build Your First Complete Webpage"
+        description="Put your frontend skills to work with this capstone project. Build a multi-section webpage meeting real-world HTML semantics and design requirements."
+        canonical="/final-project"
+        keywords="frontend project, capstone project, build webpage, html final project"
+      />
+      <div className="final-project-page">
       <div className="final-project-header">
         <h1 className="final-project-title">🏆 Build Your First Complete Webpage</h1>
         <p className="final-project-desc">
@@ -179,6 +188,8 @@ export default function FinalProject() {
           }
         />
       )}
+      </div>
+      <Footer />
     </div>
   );
 }

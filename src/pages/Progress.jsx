@@ -10,6 +10,7 @@ import htmlModules from '../data/htmlModules';
 import cssModules from '../data/cssModules';
 import jsModules from '../data/jsModules';
 import Footer from '../components/Footer/Footer';
+import SEO from '../components/SEO/SEO';
 import './Progress.css';
 
 const badges = [
@@ -20,6 +21,7 @@ const badges = [
   { id: 'js-starter', label: 'JS Beginner', icon: '⚡', requirement: 'Complete 5 JS topics', check: (ctx) => ctx.completedJsTopics.length >= 5 },
   { id: 'js-master', label: 'JS Master', icon: '💎', requirement: 'Complete all JS topics', check: (ctx) => ctx.completedJsTopics.length >= ctx.TOTAL_JS_TOPICS },
   { id: 'practice-hero', label: 'Practice Hero', icon: '✏️', requirement: 'Complete all practice tasks', check: (ctx) => ctx.completedPractice.length >= ctx.TOTAL_PRACTICE },
+  { id: 'capstone-builder', label: 'Capstone Builder', icon: '🎓', requirement: 'Submit Final Capstone Webpage', check: (ctx) => Boolean(ctx.finalProjectSubmitted) },
   { id: 'full-stack', label: 'Frontend Champion', icon: '🚀', requirement: '100% platform completion', check: (ctx) => ctx.overallPlatformProgress === 100 },
 ];
 
@@ -50,6 +52,12 @@ export default function Progress() {
 
   return (
     <div>
+      <SEO
+        title="Learning Progress & Badges Dashboard"
+        description="Track your frontend learning milestones, completion statistics, and unlocked achievements across HTML, CSS, and JavaScript."
+        canonical="/progress"
+        keywords="developer progress, learning roadmap tracking, frontend badges"
+      />
       <div className="progress-page">
         <div className="progress-page-header">
           <h1 className="progress-page-title">📊 Your Learning Progress</h1>
@@ -167,6 +175,21 @@ export default function Progress() {
                 </div>
                 <span className={`badge ${jsProgress === 100 ? 'badge-success' : 'badge-primary'}`} style={{ background: '#eab308', color: 'black' }}>
                   {jsProgress}%
+                </span>
+              </div>
+            </Link>
+
+            <Link to="/final-project" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="progress-module-item">
+                <span style={{ fontSize: '1.8rem' }}>🏆</span>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontWeight: 700, fontSize: '1.05rem' }}>Capstone Webpage</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                    {finalProjectSubmitted ? 'Submitted & Verified' : 'Build Your First Complete Webpage'}
+                  </div>
+                </div>
+                <span className={`badge ${finalProjectSubmitted ? 'badge-success' : 'badge-warning'}`}>
+                  {finalProjectSubmitted ? '100%' : 'Pending'}
                 </span>
               </div>
             </Link>

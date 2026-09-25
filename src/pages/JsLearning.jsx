@@ -8,6 +8,7 @@ import CourseSidebar from '../components/CourseSidebar/CourseSidebar';
 import TopicViewerEnhanced from '../components/TopicViewerEnhanced/TopicViewerEnhanced';
 import jsModules from '../data/jsModules';
 import { useApp } from '../context/AppContext';
+import SEO from '../components/SEO/SEO';
 import './HtmlLearning.css';
 
 export default function JsLearning() {
@@ -42,8 +43,28 @@ export default function JsLearning() {
 
   if (!topic) return null;
 
+  const topicSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: `${topic.title} - JavaScript Learning Module`,
+    description: topic.explanation,
+    articleSection: topic.category || 'JavaScript',
+    isPartOf: {
+      '@type': 'Course',
+      name: 'JavaScript Logic & Modern ES6+',
+      url: 'https://stacklearner.dev/js/learn/1',
+    },
+  };
+
   return (
     <div className="html-learning-layout">
+      <SEO
+        title={`${topic.title} — JavaScript Course`}
+        description={topic.explanation?.slice(0, 155) || `Master ${topic.title} with code explanations, browser analogies, and exercises on Stack Learner.`}
+        canonical={`/js/learn/${topic.id}`}
+        keywords={`javascript ${topic.title.toLowerCase()}, learn javascript, js tutorial, es6, frontend programming`}
+        schema={topicSchema}
+      />
       <CourseSidebar
         modules={jsModules}
         courseTitle="⚡ JavaScript Course"

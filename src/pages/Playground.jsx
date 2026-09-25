@@ -18,6 +18,7 @@ import { defaultKeymap, indentWithTab, history, historyKeymap } from '@codemirro
 import { syntaxHighlighting, defaultHighlightStyle, bracketMatching, indentOnInput } from '@codemirror/language';
 import { useApp } from '../context/AppContext';
 import LivePreview from '../components/LivePreview/LivePreview';
+import SEO from '../components/SEO/SEO';
 import './Playground.css';
 
 const DEFAULT_HTML = `<header>
@@ -151,6 +152,7 @@ export default function Playground() {
   // Initial compilation on mount
   useEffect(() => {
     handleRun();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Listen for iframe postMessage logs
@@ -237,6 +239,7 @@ export default function Playground() {
       view.destroy();
       viewRef.current = null;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTab]); // Re-create view when activeTab changes
 
   const handleReset = () => {
@@ -274,6 +277,12 @@ export default function Playground() {
 
   return (
     <div className="playground-page">
+      <SEO
+        title="Web Development Playground — Live HTML, CSS & JavaScript Editor"
+        description="Interactive multi-language online code editor. Write HTML, CSS, and JavaScript with instant live preview, syntax highlighting, and console log capture."
+        canonical="/playground"
+        keywords="online html editor, live web code runner, javascript playground, css sandbox, codemirror playground"
+      />
       <div className="playground-header">
         <div className="playground-title-area">
           <h1 className="playground-title">🎮 Web Development Playground</h1>

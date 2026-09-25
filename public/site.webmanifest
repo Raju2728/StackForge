@@ -1,0 +1,24 @@
+{
+  "name": "Stack Learner — Master Frontend Development",
+  "short_name": "Stack Learner",
+  "description": "Learn HTML, CSS, JavaScript, and React with interactive examples, real-world analogies, live code playground, quizzes, and interview prep.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "developer",
+    "productivity"
+  ],
+  "lang": "en-US",
+  "dir": "ltr"
+}

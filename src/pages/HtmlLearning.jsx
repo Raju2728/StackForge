@@ -8,6 +8,7 @@ import Sidebar from '../components/Sidebar/Sidebar';
 import TopicViewerEnhanced from '../components/TopicViewer/TopicViewerEnhanced';
 import htmlModules from '../data/htmlModules';
 import { useApp } from '../context/AppContext';
+import SEO from '../components/SEO/SEO';
 import './HtmlLearning.css';
 
 const HTML_ACCENT = '#6366f1';
@@ -41,8 +42,28 @@ export default function HtmlLearning() {
 
   if (!topic) return null;
 
+  const topicSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: `${topic.title} - HTML Learning Module`,
+    description: topic.explanation,
+    articleSection: topic.category || 'HTML',
+    isPartOf: {
+      '@type': 'Course',
+      name: 'HTML5 Web Structure & Semantics',
+      url: 'https://stacklearner.dev/learn/1',
+    },
+  };
+
   return (
     <div className="html-learning-layout">
+      <SEO
+        title={`${topic.title} — HTML Course`}
+        description={topic.explanation?.slice(0, 155) || `Learn ${topic.title} with real-world analogies, code examples, and practice on Stack Learner.`}
+        canonical={`/learn/${topic.id}`}
+        keywords={`html ${topic.title.toLowerCase()}, learn html, html course, web development`}
+        schema={topicSchema}
+      />
       <Sidebar />
       <div className="html-learning-content">
         <TopicViewerEnhanced

@@ -1184,7 +1184,7 @@ element.addEventListener('click', (e) => {
     analogy:
       'ES6 is like upgrading from a basic phone to a smartphone. The phone still makes calls (same language), but now it has touchscreen, apps, camera, GPS — doing the same things much more efficiently and with new capabilities.',
     thanglishAnalogy:
-      'Basic phone to smartphone upgrade madhiri ES6. Same language, aanaa templates (backticks), destructuring, spread operator ellaam advanced features. Template literal: "Hello " + name aaga, \`Hello ${name}\` nu short-a ezhuthalam. Destructuring: object-la irundhum values-a directly extract pannalam. Code short-a, clean-a, readable-a irukum.',
+      'Basic phone to smartphone upgrade madhiri ES6. Same language, aanaa templates (backticks), destructuring, spread operator ellaam advanced features. Template literal: "Hello " + name aaga, `Hello ${name}` nu short-a ezhuthalam. Destructuring: object-la irundhum values-a directly extract pannalam. Code short-a, clean-a, readable-a irukum.',
     analogyConnection: 'Basic phone = Old JS | Smartphone = ES6+ | Same calls = Same language | New features = New syntax',
     syntax:
 `// Template Literals

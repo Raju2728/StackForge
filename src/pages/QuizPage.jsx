@@ -6,6 +6,7 @@ import { useState } from 'react';
 import QuizSystem from '../components/QuizSystem/QuizSystem';
 import quizData from '../data/quizData';
 import Footer from '../components/Footer/Footer';
+import SEO from '../components/SEO/SEO';
 import './QuizPage.css';
 
 const modules = [
@@ -21,6 +22,12 @@ export default function QuizPage() {
 
   return (
     <div>
+      <SEO
+        title="Interactive Frontend Knowledge Quizzes — HTML, CSS & JavaScript"
+        description="Test your web development expertise with MCQ quizzes for HTML5, CSS3, and JavaScript. Get instant score breakdowns and detailed concept explanations."
+        canonical="/quiz"
+        keywords="frontend quiz, html test, css mcq, javascript quiz, web development test"
+      />
       <div className="page-container">
         <div className="quiz-page-header">
           <h1 className="quiz-page-title">❓ Knowledge Quizzes</h1>
