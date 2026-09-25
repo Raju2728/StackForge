@@ -122,6 +122,6 @@
 
   <!-- URL Watermark -->
   <text x="1100" y="585" text-anchor="end" font-family="sans-serif" font-size="16" font-weight="600" fill="#64748b">
-    stacklearner.dev
+    stack-learner.vercel.app
   </text>
 </svg>

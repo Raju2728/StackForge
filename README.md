@@ -6,11 +6,15 @@
   <p>An interactive, comprehensive frontend development learning ecosystem designed for college students and beginners.</p>
 
   <p>
+    <a href="https://stack-learner.vercel.app/"><img src="https://img.shields.io/badge/Live%20Demo-stack--learner.vercel.app-blueviolet?style=for-the-badge&logo=vercel" alt="Live Demo" /></a>
     <a href="https://github.com/Raju2728/StackLearner/stargazers"><img src="https://img.shields.io/github/stars/Raju2728/StackLearner?style=for-the-badge&color=6366f1" alt="Stars Badge" /></a>
     <a href="https://github.com/Raju2728/StackLearner/network/members"><img src="https://img.shields.io/github/forks/Raju2728/StackLearner?style=for-the-badge&color=8b5cf6" alt="Forks Badge" /></a>
     <a href="https://github.com/Raju2728/StackLearner/issues"><img src="https://img.shields.io/github/issues/Raju2728/StackLearner?style=for-the-badge&color=10b981" alt="Issues Badge" /></a>
     <img src="https://img.shields.io/badge/SEO-Optimized-success?style=for-the-badge&logo=google&color=059669" alt="SEO Optimized Badge" />
     <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License Badge" />
+  </p>
+  <p>
+    <strong>🔗 Live Application:</strong> <a href="https://stack-learner.vercel.app/" target="_blank" rel="noopener noreferrer">https://stack-learner.vercel.app/</a>
   </p>
 </div>
 

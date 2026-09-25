@@ -17,4 +17,4 @@ Allow: /final-project
 Disallow: /progress
 
 # Sitemaps
-Sitemap: https://stacklearner.dev/sitemap.xml
+Sitemap: https://stack-learner.vercel.app/sitemap.xml

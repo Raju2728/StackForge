@@ -51,7 +51,7 @@ export default function HtmlLearning() {
     isPartOf: {
       '@type': 'Course',
       name: 'HTML5 Web Structure & Semantics',
-      url: 'https://stacklearner.dev/learn/1',
+      url: 'https://stack-learner.vercel.app/learn/1',
     },
   };
 
