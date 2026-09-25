@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 const DEFAULT_TITLE = 'StackForge — Become a Frontend Developer From Zero to Building Real Websites';
 const DEFAULT_DESC = 'Learn HTML, CSS, JavaScript and React with simple explanations, real-world analogies, interactive code playground, guided practice, quizzes, and interview preparation.';
-const BASE_URL = 'https://stack-learner.vercel.app';
+const BASE_URL = 'https://stack-forge-bice.vercel.app';
 
 export default function SEO({
   title,

@@ -52,7 +52,7 @@ export default function CssLearning() {
     isPartOf: {
       '@type': 'Course',
       name: 'Modern CSS3 & Responsive Design',
-      url: 'https://stack-learner.vercel.app/css/learn/1',
+      url: 'https://stack-forge-bice.vercel.app/css/learn/1',
     },
   };
 

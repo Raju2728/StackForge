@@ -52,7 +52,7 @@ export default function JsLearning() {
     isPartOf: {
       '@type': 'Course',
       name: 'JavaScript Logic & Modern ES6+',
-      url: 'https://stack-learner.vercel.app/js/learn/1',
+      url: 'https://stack-forge-bice.vercel.app/js/learn/1',
     },
   };
 
