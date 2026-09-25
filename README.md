@@ -1,7 +1,7 @@
-# 🚀 Stack Learner — Master Frontend Web Development
+# 🚀 StackForge — Master Frontend Web Development
 
 <div align="center">
-  <img src="public/favicon.svg" alt="Stack Learner Logo" width="96" height="96" />
+  <img src="public/favicon.svg" alt="StackForge Logo" width="96" height="96" />
   <h3>From Zero to Building Real Websites</h3>
   <p>An interactive, comprehensive frontend development learning ecosystem designed for college students and beginners.</p>
 
@@ -22,7 +22,7 @@
 
 ## 🌟 Overview
 
-**Stack Learner** is a modern frontend learning platform built from the ground up to make web development intuitive and enjoyable. Instead of dry theoretical documentation, it combines **real-world analogies**, **bilingual/Thanglish intuitive explanations**, **interactive CodeMirror sandboxes**, **automated live preview rendering**, **MCQ knowledge quizzes**, and **curated interview prep**.
+**StackForge** is a modern frontend learning platform built from the ground up to make web development intuitive and enjoyable. Instead of dry theoretical documentation, it combines **real-world analogies**, **bilingual/Thanglish intuitive explanations**, **interactive CodeMirror sandboxes**, **automated live preview rendering**, **MCQ knowledge quizzes**, and **curated interview prep**.
 
 ---
 
@@ -43,7 +43,7 @@
 
 ## 🔍 SEO & Web Discoverability Features
 
-Stack Learner is thoroughly optimized for search engines, web crawlers, and social media sharing:
+StackForge is thoroughly optimized for search engines, web crawlers, and social media sharing:
 
 - **Semantic HTML5 Hierarchy**: Proper, validated single `<h1>` per page, hierarchical `<h2>`–`<h6>` structure, and landmark tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`).
 - **Dynamic SPA Metadata**: Native `SEO` component updating `document.title`, `meta[name="description"]`, `meta[name="keywords"]`, and `link[rel="canonical"]` on client-side route transitions.

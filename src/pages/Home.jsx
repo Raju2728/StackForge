@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <div>
       <SEO
-        title="Stack Learner — Master Frontend Web Development from Scratch"
+        title="StackForge — Master Frontend Web Development from Scratch"
         description="Learn HTML, CSS, JavaScript, and React with intuitive explanations, real-world analogies, live code playground, quizzes, and interview preparation. 100% free."
         canonical="/"
         keywords="frontend developer, learn html, learn css, learn javascript, web development tutorial, react roadmap, coding playground, interview questions"

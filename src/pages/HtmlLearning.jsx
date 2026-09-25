@@ -59,7 +59,7 @@ export default function HtmlLearning() {
     <div className="html-learning-layout">
       <SEO
         title={`${topic.title} — HTML Course`}
-        description={topic.explanation?.slice(0, 155) || `Learn ${topic.title} with real-world analogies, code examples, and practice on Stack Learner.`}
+        description={topic.explanation?.slice(0, 155) || `Learn ${topic.title} with real-world analogies, code examples, and practice on StackForge.`}
         canonical={`/learn/${topic.id}`}
         keywords={`html ${topic.title.toLowerCase()}, learn html, html course, web development`}
         schema={topicSchema}

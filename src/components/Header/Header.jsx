@@ -69,9 +69,9 @@ export default function Header() {
             </button>
           )}
 
-          <img src="/favicon.svg" alt="Stack Learner Logo" className="header-logo-img" style={{ width: '32px', height: '32px', borderRadius: '8px' }} />
+          <img src="/favicon.svg" alt="StackForge Logo" className="header-logo-img" style={{ width: '32px', height: '32px', borderRadius: '8px' }} />
           <NavLink to="/" className="header-brand" style={{ textDecoration: 'none' }}>
-            StackLearner
+            StackForge
           </NavLink>
         </div>
 
@@ -128,7 +128,7 @@ export default function Header() {
             <nav className="mobile-nav">
               <div className="mobile-nav-header">
                 <span style={{ fontWeight: 700, fontSize: '1.1rem' }}>
-                  🎓 StackLearner
+                  🎓 StackForge
                 </span>
                 <button
                   className="mobile-nav-close"

@@ -6,7 +6,7 @@
  */
 import { useEffect } from 'react';
 
-const DEFAULT_TITLE = 'Stack Learner — Become a Frontend Developer From Zero to Building Real Websites';
+const DEFAULT_TITLE = 'StackForge — Become a Frontend Developer From Zero to Building Real Websites';
 const DEFAULT_DESC = 'Learn HTML, CSS, JavaScript and React with simple explanations, real-world analogies, interactive code playground, guided practice, quizzes, and interview preparation.';
 const BASE_URL = 'https://stack-learner.vercel.app';
 
@@ -22,7 +22,7 @@ export default function SEO({
   useEffect(() => {
     // 1. Page Title
     const formattedTitle = title
-      ? (title.includes('Stack Learner') ? title : `${title} | Stack Learner`)
+      ? (title.includes('StackForge') ? title : `${title} | StackForge`)
       : DEFAULT_TITLE;
     document.title = formattedTitle;
 

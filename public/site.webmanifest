@@ -1,6 +1,6 @@
 {
-  "name": "Stack Learner — Master Frontend Development",
-  "short_name": "Stack Learner",
+  "name": "StackForge — Master Frontend Development",
+  "short_name": "StackForge",
   "description": "Learn HTML, CSS, JavaScript, and React with interactive examples, real-world analogies, live code playground, quizzes, and interview prep.",
   "start_url": "/",
   "display": "standalone",

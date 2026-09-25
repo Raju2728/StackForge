@@ -60,7 +60,7 @@ export default function CssLearning() {
     <div className="html-learning-layout">
       <SEO
         title={`${topic.title} — CSS Course`}
-        description={topic.explanation?.slice(0, 155) || `Learn ${topic.title} with interactive styling examples, analogies, and quizzes on Stack Learner.`}
+        description={topic.explanation?.slice(0, 155) || `Learn ${topic.title} with interactive styling examples, analogies, and quizzes on StackForge.`}
         canonical={`/css/learn/${topic.id}`}
         keywords={`css ${topic.title.toLowerCase()}, learn css, css tutorial, css styling, web design`}
         schema={topicSchema}

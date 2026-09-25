@@ -12,9 +12,9 @@ export default function Footer() {
         {/* Brand Section */}
         <div className="footer-top">
           <div className="footer-brand">
-            <img src="/favicon.svg" alt="Stack Learner Logo" style={{ width: '40px', height: '40px', borderRadius: '10px', flexShrink: 0 }} />
+            <img src="/favicon.svg" alt="StackForge Logo" style={{ width: '40px', height: '40px', borderRadius: '10px', flexShrink: 0 }} />
             <div>
-              <div className="footer-brand-name">Stack Learner</div>
+              <div className="footer-brand-name">StackForge</div>
               <p className="footer-brand-desc">
                 Learn Frontend Development with simple explanations,
                 real-time analogies, and hands-on coding practice.
@@ -73,7 +73,7 @@ export default function Footer() {
           </a>
 
           <div className="footer-copyright">
-            © 2026 Stack Learner. All Rights Reserved.
+            © 2026 StackForge. All Rights Reserved.
           </div>
         </div>
       </div>

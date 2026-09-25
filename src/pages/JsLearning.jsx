@@ -60,7 +60,7 @@ export default function JsLearning() {
     <div className="html-learning-layout">
       <SEO
         title={`${topic.title} — JavaScript Course`}
-        description={topic.explanation?.slice(0, 155) || `Master ${topic.title} with code explanations, browser analogies, and exercises on Stack Learner.`}
+        description={topic.explanation?.slice(0, 155) || `Master ${topic.title} with code explanations, browser analogies, and exercises on StackForge.`}
         canonical={`/js/learn/${topic.id}`}
         keywords={`javascript ${topic.title.toLowerCase()}, learn javascript, js tutorial, es6, frontend programming`}
         schema={topicSchema}
